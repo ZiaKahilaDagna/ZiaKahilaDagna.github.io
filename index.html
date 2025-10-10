@@ -1,149 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-            margin: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section h2 {
-            margin-bottom: 10px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        .portfolio-item {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Magang — [Nama Anda]</title>
+  <style>
+    :root{
+      --primary:#6C63FF;
+      --bg:#0f172a;
+      --card:#1e293b;
+      --text:#f1f5f9;
+      --muted:#94a3b8;
+      font-family:'Poppins',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);line-height:1.6;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:rgba(255,255,255,0.03);backdrop-filter:blur(6px);position:sticky;top:0;z-index:10;}
+    header h1{font-size:22px;color:var(--primary)}
+    nav a{color:var(--muted);margin:0 10px;text-decoration:none;transition:0.3s}
+    nav a:hover{color:var(--text)}
+    section{padding:60px 10%;max-width:1100px;margin:auto;}
+    h2{color:var(--primary);margin-bottom:10px;}
+    .card{background:var(--card);padding:20px;border-radius:12px;margin-bottom:20px;}
+    .flex{display:flex;flex-wrap:wrap;gap:20px;}
+    .col{flex:1 1 300px;}
+    .btn{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;transition:0.3s;}
+    .btn:hover{opacity:0.8}
+    .project{border-radius:10px;overflow:hidden;background:rgba(255,255,255,0.05);transition:0.3s;}
+    .project:hover{transform:translateY(-5px)}
+    .project img{width:100%;display:block;}
+    .project .content{padding:15px;}
+    .tech{display:inline-block;background:rgba(255,255,255,0.08);padding:5px 10px;border-radius:6px;font-size:12px;margin-right:5px;}
+    footer{text-align:center;padding:20px;color:var(--muted);}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>John Doe's Creative Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#organizations">Organizations</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>[Nama Anda]</h1>
+    <nav>
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#portofolio">Portofolio</a>
+    </nav>
+  </header>
 
-    <section id="profile">
-        <h2>Profile</h2>
-        <p>Hello, I'm John Doe, a passionate web developer with a love for creative problem-solving and building impactful websites. My expertise includes front-end and back-end development, with a strong focus on user experience and performance optimization.</p>
-    </section>
+  <section id="profil">
+    <h2>Profil</h2>
+    <div class="card">
+      <p>Halo! Saya [Nama Anda], seorang mahasiswa yang tertarik pada pengembangan web, desain UI/UX, dan teknologi interaktif. Saya senang belajar hal baru dan siap berkontribusi dalam tim magang untuk mengembangkan solusi digital yang berdampak.</p>
+    </div>
+  </section>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>BS in Computer Science</strong>, University of XYZ (2016 - 2020)</li>
-            <li><strong>Web Development Bootcamp</strong>, Code Academy (2021)</li>
-        </ul>
-    </section>
+  <section id="pendidikan">
+    <h2>Pendidikan</h2>
+    <div class="card">
+      <strong>Universitas Teknologi Kreatif</strong>
+      <p>S1 Teknik Informatika (2022 - Sekarang)</p>
+      <p>Fokus: Front-End Development, Desain Antarmuka, Interaksi Manusia-Komputer</p>
+    </div>
+  </section>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li><strong>Frontend Developer</strong>, ABC Corp (2020 - Present)</li>
-            <li><strong>Junior Web Developer</strong>, XYZ Studios (2019 - 2020)</li>
-        </ul>
-    </section>
+  <section id="organisasi">
+    <h2>Pengalaman Organisasi</h2>
+    <div class="card">
+      <strong>Himpunan Mahasiswa Informatika</strong>
+      <p>Divisi Media & Desain (2023 - Sekarang)</p>
+      <ul>
+        <li>Mengelola konten visual untuk acara dan media sosial organisasi.</li>
+        <li>Berpartisipasi dalam tim web internal untuk event tahunan kampus.</li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="organizations">
-        <h2>Organizations</h2>
-        <ul>
-            <li><strong>Member</strong>, Web Developers Association</li>
-            <li><strong>Volunteer</strong>, Code for Good Initiative</li>
-        </ul>
-    </section>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-item">
-            <img src="screenshot1.png" alt="Project Screenshot">
-            <h3>Website Builder</h3>
-            <p>Tech Stack: HTML, CSS, JavaScript, Node.js</p>
-            <p>A simple website builder that allows users to create custom websites with drag-and-drop features.</p>
+  <section id="portofolio">
+    <h2>Portofolio Pembuatan Website</h2>
+    <div class="flex">
+      <div class="col project">
+        <img src="https://via.placeholder.com/400x250?text=Screenshot+Aplikasi+1" alt="Screenshot Aplikasi 1">
+        <div class="content">
+          <h3>Website Portfolio Personal</h3>
+          <p>Membangun website portofolio responsif dengan HTML, CSS, dan JavaScript.</p>
+          <div>
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+            <span class="tech">JavaScript</span>
+          </div>
         </div>
-        <div class="portfolio-item">
-            <img src="screenshot2.png" alt="Project Screenshot">
-            <h3>Personal Blog</h3>
-            <p>Tech Stack: HTML, CSS, React, Firebase</p>
-            <p>A personal blogging platform where users can create and manage their blogs easily.</p>
-        </div>
-    </section>
+      </div>
 
-    <footer>
-        <p>&copy; 2025 John Doe | All Rights Reserved</p>
-    </footer>
+      <div class="col project">
+        <img src="https://via.placeholder.com/400x250?text=Screenshot+Aplikasi+2" alt="Screenshot Aplikasi 2">
+        <div class="content">
+          <h3>Website E-Commerce Simple</h3>
+          <p>Membangun prototipe toko online sederhana dengan tampilan modern dan fitur keranjang belanja simulasi.</p>
+          <div>
+            <span class="tech">HTML</span>
+            <span class="tech">TailwindCSS</span>
+            <span class="tech">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© <span id="year"></span> [Nama Anda] — Portofolio Magang</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
