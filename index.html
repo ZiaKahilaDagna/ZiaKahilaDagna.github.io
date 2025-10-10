@@ -1,8 +1,149 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        .portfolio-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
-  <body>
-    <h1>Hello World</h1>
-  </body>
+<body>
+    <header>
+        <h1>John Doe's Creative Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#organizations">Organizations</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="profile">
+        <h2>Profile</h2>
+        <p>Hello, I'm John Doe, a passionate web developer with a love for creative problem-solving and building impactful websites. My expertise includes front-end and back-end development, with a strong focus on user experience and performance optimization.</p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>BS in Computer Science</strong>, University of XYZ (2016 - 2020)</li>
+            <li><strong>Web Development Bootcamp</strong>, Code Academy (2021)</li>
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul>
+            <li><strong>Frontend Developer</strong>, ABC Corp (2020 - Present)</li>
+            <li><strong>Junior Web Developer</strong>, XYZ Studios (2019 - 2020)</li>
+        </ul>
+    </section>
+
+    <section id="organizations">
+        <h2>Organizations</h2>
+        <ul>
+            <li><strong>Member</strong>, Web Developers Association</li>
+            <li><strong>Volunteer</strong>, Code for Good Initiative</li>
+        </ul>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-item">
+            <img src="screenshot1.png" alt="Project Screenshot">
+            <h3>Website Builder</h3>
+            <p>Tech Stack: HTML, CSS, JavaScript, Node.js</p>
+            <p>A simple website builder that allows users to create custom websites with drag-and-drop features.</p>
+        </div>
+        <div class="portfolio-item">
+            <img src="screenshot2.png" alt="Project Screenshot">
+            <h3>Personal Blog</h3>
+            <p>Tech Stack: HTML, CSS, React, Firebase</p>
+            <p>A personal blogging platform where users can create and manage their blogs easily.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 John Doe | All Rights Reserved</p>
+    </footer>
+</body>
 </html>
