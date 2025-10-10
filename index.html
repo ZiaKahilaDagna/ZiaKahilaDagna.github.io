@@ -102,4 +102,598 @@
 
         /* ==================== C. NAVIGASI (HEADER) ==================== */
         #header {
-            background: var(--
+            background: var(--dark-color);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links a {
+            color: white;
+            padding: 8px 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Toggle Menu untuk Mobile */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* ==================== D. HERO SECTION ==================== */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background: var(--secondary-color);
+            color: white;
+            padding-top: 80px; /* Jarak dari fixed header */
+        }
+
+        .hero-content h1 {
+            font-size: 4em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        /* ==================== E. ABOUT (PROFIL) ==================== */
+        #about {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .profile-container {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            flex-wrap: wrap; /* Untuk responsif */
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-photo {
+            flex: 0 0 250px;
+            text-align: center;
+        }
+
+        .profile-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .bio p {
+            margin-bottom: 20px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .detail-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .detail-item ul {
+            list-style: none;
+        }
+
+        .detail-item li {
+            padding: 5px 0;
+            border-bottom: 1px dashed var(--light-color);
+        }
+        
+        .detail-item li:last-child {
+            border-bottom: none;
+        }
+
+        /* ==================== F. EXPERIENCE ==================== */
+        #experience {
+            padding: 100px 0;
+            background: var(--light-color);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        /* Kiri Item */
+        .left {
+            left: 0;
+        }
+
+        .left::after {
+            left: 99.5%; /* Atur agar pas di tengah garis */
+        }
+        
+        /* Kanan Item */
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .timeline-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .date {
+            color: var(--primary-color);
+            font-style: italic;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* ==================== G. PORTFOLIO ==================== */
+        #portfolio {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-overlay h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .tech-stack span {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 5px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        /* ==================== H. FOOTER ==================== */
+        #footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ==================== I. RESPONSIVE DESIGN (MEDIA QUERIES) ==================== */
+        @media (max-width: 768px) {
+            
+            /* Navigasi Mobile */
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background: var(--dark-color);
+                position: absolute;
+                top: 58px; /* Di bawah header */
+                left: 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            /* Hero */
+            .hero-content h1 {
+                font-size: 3em;
+            }
+            
+            /* About/Profile */
+            .profile-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-photo {
+                margin-bottom: 20px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Experience Timeline */
+            .timeline::after {
+                left: 31px; /* Pindahkan garis ke kiri */
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 0 10px 10px;
+                border-color: transparent transparent transparent white;
+            }
+
+            .left::after, .right::after {
+                left: 21px; /* Pindahkan titik ke kiri */
+            }
+            
+            .right {
+                left: 0%;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container navbar">
+            <a href="#" class="logo">Zia Kahila</a>
+            <nav>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="#about">Profil</a></li>
+                    <li><a href="#experience">Pengalaman</a></li>
+                    <li><a href="#portfolio">Portofolio</a></li>
+                    <li><a href="#footer">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <p>Halo, saya</p>
+            <h1>Zia Kahila Dagna</h1>
+            <h2>Siswi SMK RPL & Calon Web Developer</h2>
+            <p>Bersemangat dalam coding, design, dan menciptakan solusi digital.</p>
+            <a href="#portfolio" class="btn">Lihat Proyek Saya <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Saya</h2>
+            <div class="profile-container">
+                <div class="profile-photo">
+                    <img src="https://via.placeholder.com/200/ff6b6b/ffffff?text=ZIA" alt="Foto Profil Zia Kahila">
+                    <h3>Zia Kahila Dagna</h3>
+                    <p>SMK RPL Student</p>
+                </div>
+                <div class="profile-info">
+                    <div class="bio">
+                        <p>Saya adalah siswi SMK Jurusan **Rekayasa Perangkat Lunak (RPL)** yang memiliki minat tinggi dalam pengembangan web dan pemrograman. Saya fokus pada penguasaan **HTML, CSS, dan JavaScript**, serta aktif dalam proyek pembuatan website yang interaktif dan *user-friendly*.</p>
+                        <p>Saya terbiasa bekerja dalam tim, cepat belajar, dan selalu antusias untuk menerapkan pengetahuan yang didapat dari sekolah dan proyek mandiri.</p>
+                    </div>
+
+                    <div class="details-grid">
+                        <div class="detail-item card">
+                            <h4><i class="fas fa-school"></i> Pendidikan</h4>
+                            <ul>
+                                <li>**Rekayasa Perangkat Lunak (RPL)**</li>
+                                <li>SMK [Nama Sekolah Anda]</li>
+                                <li>Tahun: [Tahun Masuk] - [Tahun Lulus]</li>
+                            </ul>
+                        </div>
+
+                        <div class="detail-item card">
+                            <h4><i class="fas fa-users"></i> Organisasi</h4>
+                            <ul>
+                                <li>**Sekretaris**</li>
+                                <li>OSIS/MPK SMK [Nama Sekolah]</li>
+                                <li>Tahun: 2024 - Sekarang</li>
+                                <li>**Anggota Kelompok Ilmiah Remaja (KIR)**</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Pengalaman</h2>
+
+            <div class="timeline">
+                
+                <div class="timeline-item left card">
+                    <div class="timeline-content">
+                        <h3>Peserta Prakerin (Magang Industri)</h3>
+                        <span class="date">Januari 2025 - Maret 2025</span>
+                        <p>**Perusahaan/Institusi:** [Nama Perusahaan Magang]</p>
+                        <ul>
+                            <li>Berpartisipasi dalam pengembangan modul frontend untuk sistem inventaris menggunakan **Bootstrap dan jQuery**.</li>
+                            <li>Melakukan pengujian (testing) dan *debugging* untuk memastikan fungsionalitas aplikasi berjalan optimal.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item right card">
+                    <div class="timeline-content">
+                        <h3>Ketua Tim Pengembangan Aplikasi</h3>
+                        <span class="date">Agustus 2024 - Desember 2024</span>
+                        <p>**Institusi:** Proyek Akhir Mata Pelajaran Produktif RPL</p>
+                        <ul>
+                            <li>Memimpin 3 anggota tim dalam membuat aplikasi web kasir sederhana berbasis **PHP dan MySQL**.</li>
+                            <li>Bertanggung jawab pada desain UI/UX dan integrasi *database*.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portofolio Pembuatan Website</h2>
+            
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x250/48dbfb/2c3e50?text=App+Edukasi+Web" alt="Screenshot Aplikasi Edukasi">
+                    <div class="portfolio-overlay">
+                        <h3>Aplikasi Edukasi Interaktif</h3>
+                        <p>Website E-Learning dengan kuis interaktif.</p>
+                        <div class="tech-stack">
+                            <span>**ReactJS**</span>
+                            <span>Redux</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                        <a href="https://github.com/ZiaKahila/project1" target="_blank" class="btn">Lihat Proyek <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x250/ff6b6b/ffffff?text=Sistem+Manajemen+Proyek" alt="Screenshot Sistem Manajemen Proyek">
+                    <div class="portfolio-overlay">
+                        <h3>Sistem Manajemen Proyek (TaskFlow)</h3>
+                        <p>Dashboard untuk mengelola alur kerja tim.</p>
+                        <div class="tech-stack">
+                            <span>**Vue.js**</span>
+                            <span>Tailwind CSS</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="https://github.com/ZiaKahila/project2" target="_blank" class="btn">Lihat Proyek <i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/400x250/2c3e50/ecf0f1?text=Aplikasi+Kasir+SMK" alt="Screenshot Aplikasi Kasir">
+                    <div class="portfolio-overlay">
+                        <h3>Aplikasi Kasir Sederhana</h3>
+                        <p>Aplikasi untuk mata pelajaran produktif.</p>
+                        <div class="tech-stack">
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+                        </div>
+                        <a href="#" target="_blank" class="btn">Lihat Proyek <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="social-links">
+                <a href="mailto:zia.kahila.d@example.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/ziakd" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ZiaKahila" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="tel:0812xxxxxxxx"><i class="fas fa-phone"></i></a>
+            </div>
+            <p>&copy; 2025 Zia Kahila Dagna. Portofolio RPL. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const header = document.getElementById('header');
+
+            // 1. Toggle Menu Navigasi (Untuk Mobile)
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // Mengubah ikon bar menjadi ikon silang
+                menuToggle.querySelector('i').classList.toggle('fa-bars');
+                menuToggle.querySelector('i').classList.toggle('fa-times');
+            });
+            
+            // 2. Smooth Scrolling & Tutup Menu Setelah Klik (Untuk Mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Hanya lakukan smooth scrolling jika link adalah anchor (#)
+                    if (this.hash !== "") {
+                        e.preventDefault();
+                        const hash = this.hash;
+
+                        // Tutup menu jika sedang aktif (hanya berlaku di mobile)
+                        if (navMenu.classList.contains('active')) {
+                             navMenu.classList.remove('active');
+                             menuToggle.querySelector('i').classList.remove('fa-times');
+                             menuToggle.querySelector('i').classList.add('fa-bars');
+                        }
+
+                        // Lakukan smooth scroll
+                        document.querySelector(hash).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 3. Efek Shadow pada Header saat di-scroll
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.2)';
+                } else {
+                    header.style.boxShadow = 'none';
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
