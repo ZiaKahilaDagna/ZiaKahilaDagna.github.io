@@ -1,115 +1,105 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portofolio Magang — [Nama Anda]</title>
-  <style>
-    :root{
-      --primary:#6C63FF;
-      --bg:#0f172a;
-      --card:#1e293b;
-      --text:#f1f5f9;
-      --muted:#94a3b8;
-      font-family:'Poppins',sans-serif;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);line-height:1.6;}
-    header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:rgba(255,255,255,0.03);backdrop-filter:blur(6px);position:sticky;top:0;z-index:10;}
-    header h1{font-size:22px;color:var(--primary)}
-    nav a{color:var(--muted);margin:0 10px;text-decoration:none;transition:0.3s}
-    nav a:hover{color:var(--text)}
-    section{padding:60px 10%;max-width:1100px;margin:auto;}
-    h2{color:var(--primary);margin-bottom:10px;}
-    .card{background:var(--card);padding:20px;border-radius:12px;margin-bottom:20px;}
-    .flex{display:flex;flex-wrap:wrap;gap:20px;}
-    .col{flex:1 1 300px;}
-    .btn{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;transition:0.3s;}
-    .btn:hover{opacity:0.8}
-    .project{border-radius:10px;overflow:hidden;background:rgba(255,255,255,0.05);transition:0.3s;}
-    .project:hover{transform:translateY(-5px)}
-    .project img{width:100%;display:block;}
-    .project .content{padding:15px;}
-    .tech{display:inline-block;background:rgba(255,255,255,0.08);padding:5px 10px;border-radius:6px;font-size:12px;margin-right:5px;}
-    footer{text-align:center;padding:20px;color:var(--muted);}
-  </style>
-</head>
-<body>
-  <header>
-    <h1>[Nama Anda]</h1>
-    <nav>
-      <a href="#profil">Profil</a>
-      <a href="#pendidikan">Pendidikan</a>
-      <a href="#organisasi">Organisasi</a>
-      <a href="#portofolio">Portofolio</a>
-    </nav>
-  </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Kreatif - Zia Kahila Dagna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* ==================== A. RESET & FONT ==================== */
+        :root {
+            --primary-color: #ff6b6b; /* Merah Muda - Warna Aksen */
+            --secondary-color: #48dbfb; /* Biru Muda - Warna Kontras */
+            --dark-color: #2c3e50; /* Biru Tua - Teks/Latar Gelap */
+            --light-color: #ecf0f1; /* Abu Muda - Latar Terang */
+            --text-color: #34495e; /* Abu Tua - Teks Utama */
+            --font-family: 'Poppins', sans-serif;
+        }
 
-  <section id="profil">
-    <h2>Profil</h2>
-    <div class="card">
-      <p>Halo! Saya [Nama Anda], seorang mahasiswa yang tertarik pada pengembangan web, desain UI/UX, dan teknologi interaktif. Saya senang belajar hal baru dan siap berkontribusi dalam tim magang untuk mengembangkan solusi digital yang berdampak.</p>
-    </div>
-  </section>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 
-  <section id="pendidikan">
-    <h2>Pendidikan</h2>
-    <div class="card">
-      <strong>Universitas Teknologi Kreatif</strong>
-      <p>S1 Teknik Informatika (2022 - Sekarang)</p>
-      <p>Fokus: Front-End Development, Desain Antarmuka, Interaksi Manusia-Komputer</p>
-    </div>
-  </section>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <section id="organisasi">
-    <h2>Pengalaman Organisasi</h2>
-    <div class="card">
-      <strong>Himpunan Mahasiswa Informatika</strong>
-      <p>Divisi Media & Desain (2023 - Sekarang)</p>
-      <ul>
-        <li>Mengelola konten visual untuk acara dan media sosial organisasi.</li>
-        <li>Berpartisipasi dalam tim web internal untuk event tahunan kampus.</li>
-      </ul>
-    </div>
-  </section>
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            scroll-behavior: smooth;
+        }
 
-  <section id="portofolio">
-    <h2>Portofolio Pembuatan Website</h2>
-    <div class="flex">
-      <div class="col project">
-        <img src="https://via.placeholder.com/400x250?text=Screenshot+Aplikasi+1" alt="Screenshot Aplikasi 1">
-        <div class="content">
-          <h3>Website Portfolio Personal</h3>
-          <p>Membangun website portofolio responsif dengan HTML, CSS, dan JavaScript.</p>
-          <div>
-            <span class="tech">HTML</span>
-            <span class="tech">CSS</span>
-            <span class="tech">JavaScript</span>
-          </div>
-        </div>
-      </div>
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
 
-      <div class="col project">
-        <img src="https://via.placeholder.com/400x250?text=Screenshot+Aplikasi+2" alt="Screenshot Aplikasi 2">
-        <div class="content">
-          <h3>Website E-Commerce Simple</h3>
-          <p>Membangun prototipe toko online sederhana dengan tampilan modern dan fitur keranjang belanja simulasi.</p>
-          <div>
-            <span class="tech">HTML</span>
-            <span class="tech">TailwindCSS</span>
-            <span class="tech">JavaScript</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        a:hover {
+            color: var(--dark-color);
+        }
 
-  <footer>
-    <p>© <span id="year"></span> [Nama Anda] — Portofolio Magang</p>
-  </footer>
+        /* ==================== B. UTILITIES & TYPOGRAPHY ==================== */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px 0;
+        }
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Kartu (Card) Dasar */
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Tombol */
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-color);
+            color: white;
+        }
+
+        /* ==================== C. NAVIGASI (HEADER) ==================== */
+        #header {
+            background: var(--
