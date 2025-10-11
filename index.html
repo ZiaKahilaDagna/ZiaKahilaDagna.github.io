@@ -163,30 +163,6 @@
             max-width: 600px;
         }
         
-        .profile-text ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-        
-        .profile-text li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .profile-text li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-        }
-
-
         /* TIMELINE (PENDIDIKAN & ORGANISASI) */
         .timeline {
             max-width: 800px;
@@ -292,49 +268,37 @@
             font-weight: bold;
         }
 
-        /* PORTFOLIO */
-        #portofolio .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
+        /* TABLES STYLES */
+        .data-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 30px auto;
+            border-collapse: collapse;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             text-align: left;
-            transition: transform 0.3s;
-            cursor: pointer;
+            overflow: hidden;
+            border-radius: 8px;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
         }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
+        .data-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .portfolio-info {
-            padding: 15px;
+        .data-table tr:nth-child(even) {
+            background-color: var(--light-color);
         }
 
-        .portfolio-info h3 {
-            color: var(--dark-color);
-            margin-bottom: 5px;
-        }
-
-        .tech-stack {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-style: italic;
-            font-weight: 600;
+        .data-table tr:hover {
+            background-color: #e9ecef;
         }
         
         /* FOOTER */
@@ -360,59 +324,26 @@
 
         /* RESPONSIVENESS */
         @media (max-width: 900px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 20px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after,
-            .timeline-item:nth-child(even)::after {
-                left: 10px;
-                right: auto;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                text-align: left;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-item-content::after {
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-                right: auto;
-                left: -15px;
-            }
-
-            .timeline-item-content {
-                margin: 0;
-            }
-
-            #profil .profile-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                display: none;
-            }
+            /* ... (CSS responsiveness tetap sama) ... */
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
+            .timeline-item:nth-child(odd) .timeline-item-content::after { border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; right: auto; left: -15px; }
+            .timeline-item-content { margin: 0; }
+            #profil .profile-content { flex-direction: column; text-align: center; }
+            nav ul { display: none; }
+            .data-table { border: 0; }
+            .data-table thead { display: none; }
+            .data-table tr { margin-bottom: 10px; display: block; border-bottom: 2px solid #ddd; }
+            .data-table td { display: block; text-align: right; border-bottom: 1px dotted #ccc; }
+            .data-table td::before { content: attr(data-label); float: left; font-weight: bold; text-transform: uppercase; }
         }
 
         @media (max-width: 600px) {
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
+            #hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
         }
     </style>
 </head>
@@ -424,6 +355,7 @@
                 <div class="logo">ZKD.</div>
                 <ul>
                     <li><a href="#profil">Profil</a></li>
+                    <li><a href="#keahlian">Keahlian</a></li>
                     <li><a href="#pendidikan">Pendidikan</a></li>
                     <li><a href="#organisasi">Organisasi</a></li>
                     <li><a href="#portofolio">Portofolio</a></li>
@@ -446,16 +378,52 @@
             <div class="profile-content">
                 <img src="https://via.placeholder.com/200/007bff/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
                 <div class="profile-text">
-                    <p>Saya Zia Kahila Dagna, siswi SMK Informatika Utama jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan pada bidang pengembangan web dan desain digital. Saya terbiasa menggunakan berbagai tools seperti Visual Studio Code dan Canva, serta memahami dasar-dasar HTML, CSS, dan Laravel.
+                    <p>Saya **Zia Kahila Dagna**, siswi SMK Informatika Utama jurusan **Rekayasa Perangkat Lunak (RPL)** yang memiliki ketertarikan pada bidang pengembangan web dan desain digital. Saya terbiasa menggunakan berbagai tools seperti **Visual Studio Code** dan **Canva**, serta memahami dasar-dasar HTML, CSS, dan Laravel.
 
 Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belajar pentingnya kerja sama tim, tanggung jawab, dan manajemen waktu dalam menyelesaikan tugas dengan baik.</p>
                     
-                    <p><strong>Email:</strong>ziakahiladagnazia@gmail.com</p>
+                    <p><strong>Email:</strong> ziakahiladagnazia@gmail.com</p>
                 </div>
             </div>
         </div>
     </section>
-
+    
+    <section id="keahlian" class="js-fade-in">
+        <div class="container">
+            <h2>Keahlian Teknis</h2>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Keahlian</th>
+                        <th>Tingkat Penguasaan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Kategori">Bahasa Pemrograman Web</td>
+                        <td data-label="Keahlian">HTML5, CSS3, JavaScript (Dasar)</td>
+                        <td data-label="Tingkat Penguasaan">Menengah</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Kategori">Framework/Library</td>
+                        <td data-label="Keahlian">Bootstrap, Laravel (Dasar)</td>
+                        <td data-label="Tingkat Penguasaan">Dasar</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Kategori">Desain Grafis & UI/UX</td>
+                        <td data-label="Keahlian">Canva, Figma (Dasar)</td>
+                        <td data-label="Tingkat Penguasaan">Menengah</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Kategori">Database & Tools</td>
+                        <td data-label="Keahlian">MySQL (Dasar), Visual Studio Code, Git (Dasar)</td>
+                        <td data-label="Tingkat Penguasaan">Menengah</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
     <section id="pendidikan" class="js-fade-in">
         <div class="container">
             <h2>Riwayat Pendidikan</h2>
@@ -464,7 +432,7 @@ Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belaj
                     <div class="timeline-item-content">
                         <span class="timeline-date">2024 - Sekarang</span>
                         <h4>SMK Informatika Utama</h4>
-                        <p>Jurusan: Rekayasa Perangkat Lunak (RPL)</p>
+                        <p>Jurusan: **Rekayasa Perangkat Lunak (RPL)**</p>
                         <p>Fokus pada pengembangan perangkat lunak dan aplikasi berbasis web.</p>
                     </div>
                 </div>
@@ -494,20 +462,16 @@ Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belaj
                     <div class="timeline-item-content">
                         <span class="timeline-date">2024 - Sekarang</span>
                         <h4>Anggota Karang Taruna (Katar)</h4>
-                        <p>Di Linngkungan Rt.02 Rw. 05 , Kec. Cinere , Kel. Cinere</p>
-                        <p>Berpartisipasi dalam kegiatan sosial dan kepemudaan di lingkungan sekitar.</p>
+                        <p>Di Lingkungan Rt.02 Rw. 05, Kec. Cinere, Kel. Cinere</p>
+                        <p>Berpartisipasi aktif dalam kegiatan sosial dan kepemudaan di lingkungan sekitar.</p>
                     </div>
-                </div
+                </div>
                 <div class="timeline-item">
                     <div class="timeline-item-content">
                         <span class="timeline-date">2024 - Sekarang</span>
                         <h4>Anggota English Club (EC)</h4>
                         <p>SMK Informatika Utama</p>
-                        <p>Aktif mengikuti seluruh kegiatan
-                        English Club seperti,
-                        TMI (To Much Information),
-                        Vocab Jar, Penyampaian Materi,
-                        dan Ice Breaking.</p>
+                        <p>Aktif mengikuti seluruh kegiatan, termasuk TMI, Vocab Jar, Penyampaian Materi, dan Ice Breaking.</p>
                     </div>
                 </div>
             </div>
@@ -516,37 +480,38 @@ Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belaj
 
     <section id="portofolio" class="js-fade-in">
         <div class="container">
-            <h2>Karya Website</h2>
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=E-Commerce+Project" alt="Screenshoot Aplikasi E-Commerce">
-                    <div class="portfolio-info">
-                        <h3>Mockup Website E-Commerce</h3>
-                        <p>Proyek kelas untuk merancang antarmuka keranjang belanja dan *checkout* menggunakan HTML dan CSS.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3, Vanilla JS, Bootstrap</p>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/28a745/ffffff?text=Sistem+Absensi+Web" alt="Screenshoot Aplikasi Data Visualisasi">
-                    <div class="portfolio-info">
-                        <h3>Sistem Absensi Sederhana (Web)</h3>
-                        <p>Simulasi sistem absensi siswa berbasis web, menggunakan input data sederhana.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML, CSS, PHP (Dasar), MySQL (Dasar)</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/343a40/ffffff?text=Landing+Page+RPL" alt="Screenshoot Website Company Profile">
-                    <div class="portfolio-info">
-                        <h3>Landing Page Profil Jurusan RPL</h3>
-                        <p>Desain *landing page* responsif untuk mempromosikan jurusan RPL di sekolah.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3 (Flexbox), Canva (Design Mockup)</p>
-                    </div>
-                </div>
-
-            </div>
+            <h2>Daftar Karya (Portofolio)</h2>
+            <p>Berikut adalah daftar proyek utama yang telah saya kerjakan selama studi RPL.</p>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nama Proyek</th>
+                        <th>Deskripsi Singkat</th>
+                        <th>Teknologi Utama</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="No.">1</td>
+                        <td data-label="Nama Proyek">Mockup E-Commerce Sederhana</td>
+                        <td data-label="Deskripsi Singkat">Rancangan *front-end* untuk platform belanja dengan keranjang dan *checkout* statis.</td>
+                        <td data-label="Teknologi Utama">HTML5, CSS3, Bootstrap</td>
+                    </tr>
+                    <tr>
+                        <td data-label="No.">2</td>
+                        <td data-label="Nama Proyek">Sistem Absensi Web (Simulasi)</td>
+                        <td data-label="Deskripsi Singkat">Simulasi input data absensi dasar berbasis web, menggunakan PHP dan MySQL untuk koneksi.</td>
+                        <td data-label="Teknologi Utama">HTML, CSS, PHP (Dasar), MySQL</td>
+                    </tr>
+                    <tr>
+                        <td data-label="No.">3</td>
+                        <td data-label="Nama Proyek">Landing Page Profil RPL</td>
+                        <td data-label="Deskripsi Singkat">Desain satu halaman (single page) yang fokus pada responsivitas dan informasi jurusan.</td>
+                        <td data-label="Teknologi Utama">HTML5, CSS3 (Flexbox), Canva</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
@@ -602,14 +567,11 @@ Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belaj
                 });
             });
 
-            // 3. Efek Klik Portofolio
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    alert('Detail proyek ' + item.querySelector('h3').innerText + ' akan ditampilkan di sini.');
-                });
-            });
-
+            // 3. Efek Klik Portofolio (Hanya memberikan alert)
+            // Note: Karena Portofolio kini berupa tabel, klik pada baris tabel tidak akan memicu alert ini secara default, 
+            // kecuali Anda memberikan event listener pada baris (tr) atau sel (td) tabel.
+            // Untuk menyederhanakan, saya biarkan bagian ini tidak diaktifkan pada elemen tabel portofolio.
+            
         });
     </script>
 
