@@ -1,620 +1,651 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Zia Kahila Dagna </title>
-    <style>
-        /* ====================
-           CSS STYLES 
-           ==================== */
-        :root {
-            --primary-color: #007bff; /* Biru cerah (Informatika) */
-            --secondary-color: #28a745; /* Hijau (Kreatif) */
-            --dark-color: #343a40; /* Abu tua */
-            --light-color: #f8f9fa; /* Abu muda */
-            --bg-color: #ffffff; /* Putih */
-            --font-main: 'Arial', sans-serif;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Zia Kahila Dagna (RPL)</title>
+    <style>
+        /* ====================
+           CSS STYLES 
+           ==================== */
+        :root {
+            --primary-color: #007bff; /* Biru cerah (Informatika) */
+            --secondary-color: #28a745; /* Hijau (Kreatif) */
+            --dark-color: #343a40; /* Abu tua */
+            --light-color: #f8f9fa; /* Abu muda */
+            --bg-color: #ffffff; /* Putih */
+            --font-main: 'Arial', sans-serif;
+        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--dark-color);
-            scroll-behavior: smooth;
-        }
+        body {
+            font-family: var(--font-main);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--dark-color);
+            scroll-behavior: smooth;
+        }
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-        /* HEADER & NAVIGATION */
-        header {
-            background: var(--dark-color);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+        /* HEADER & NAVIGATION */
+        header {
+            background: var(--dark-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: block;
-            transition: color 0.3s;
-        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: color 0.3s;
+        }
 
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
 
-        /* HERO SECTION */
-        #hero {
-            background: linear-gradient(135deg, var(--primary-color), #0056b3);
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
+        /* HERO SECTION */
+        #hero {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
 
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
 
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-        .cta-button:hover {
-            background-color: #1e7e34;
-            transform: scale(1.05);
-        }
+        .cta-button:hover {
+            background-color: #1e7e34;
+            transform: scale(1.05);
+        }
 
-        /* MAIN CONTENT SECTION */
-        section {
-            padding: 60px 0;
-            text-align: center;
-        }
+        /* MAIN CONTENT SECTION */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
 
-        section:nth-child(even) {
-            background-color: var(--light-color);
-        }
+        section:nth-child(even) {
+            background-color: var(--light-color);
+        }
 
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
 
-        h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
 
-        /* PROFILE */
-        #profil .profile-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
-        }
+        /* PROFILE */
+        #profil .profile-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
 
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
 
-        .profile-text {
-            max-width: 600px;
-        }
-        
-        .profile-text ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-        
-        .profile-text li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 20px;
-        }
-        
-        .profile-text li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-        }
+        .profile-text {
+            max-width: 600px;
+        }
+        
+        .profile-text ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        
+        .profile-text li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+            text-align: left; /* Penting untuk list */
+        }
+        
+        .profile-text li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
 
+        /* TIMELINE (PENDIDIKAN & ORGANISASI) */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px 0;
+        }
 
-        /* TIMELINE (PENDIDIKAN & ORGANISASI) */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            padding: 20px 0;
-        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
 
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
 
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
+        .timeline-item-content {
+            padding: 20px 30px;
+            background: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s;
+            border-top: 5px solid var(--secondary-color);
+        }
+        
+        .timeline-item-content:hover {
+            transform: translateY(-5px);
+        }
 
-        .timeline-item-content {
-            padding: 20px 30px;
-            background: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s;
-            border-top: 5px solid var(--secondary-color);
-        }
-        
-        .timeline-item-content:hover {
-            transform: translateY(-5px);
-        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
 
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--secondary-color);
-            border: 4px solid var(--primary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
 
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
 
-        .timeline-item:nth-child(odd) {
-            text-align: right;
-        }
+        .timeline-item:nth-child(odd) .timeline-item-content::after {
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 22px;
+            z-index: 1;
+            right: -15px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
 
-        .timeline-item:nth-child(odd) .timeline-item-content::after {
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            top: 22px;
-            z-index: 1;
-            right: -15px;
-            border: medium solid white;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
+        .timeline-item:nth-child(even) .timeline-item-content::after {
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 22px;
+            z-index: 1;
+            left: -15px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
 
-        .timeline-item:nth-child(even) .timeline-item-content::after {
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            top: 22px;
-            z-index: 1;
-            left: -15px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
+        .timeline-item-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
 
-        .timeline-item-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
+        .timeline-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
 
-        .timeline-date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+        /* PORTOFOLIO & KEAHLIAN (Card Grid) */
+        #portofolio .portfolio-grid,
+        #keahlian .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
 
-        /* PORTFOLIO */
-        #portofolio .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
+        .portfolio-item, .skill-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s;
+            cursor: pointer;
+            min-height: 250px;
+        }
 
-        .portfolio-item {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
+        .portfolio-item:hover, .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
+        .portfolio-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+        .portfolio-info {
+            padding: 15px;
+        }
 
-        .portfolio-info {
-            padding: 15px;
-        }
+        .portfolio-info h3, .skill-item h3 {
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .skill-item {
+            padding: 20px;
+            border-left: 5px solid var(--primary-color);
+            text-align: center;
+        }
+        
+        .skill-item h3 {
+            color: var(--primary-color);
+        }
 
-        .portfolio-info h3 {
-            color: var(--dark-color);
-            margin-bottom: 5px;
-        }
+        .tech-stack {
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-style: italic;
+            font-weight: 600;
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+        
+        /* INTERACTIVITY (JavaScript/CSS) */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        .tech-stack {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-style: italic;
-            font-weight: 600;
-        }
-        
-        /* FOOTER */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-        
-        /* INTERACTIVITY (JavaScript/CSS) */
-        .js-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        .js-fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* RESPONSIVENESS */
+        @media (max-width: 900px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
+            .timeline-item:nth-child(odd) .timeline-item-content::after { border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; right: auto; left: -15px; }
+            .timeline-item-content { margin: 0; }
+            #profil .profile-content { flex-direction: column; text-align: center; }
+            nav ul { display: none; }
+        }
 
-        /* RESPONSIVENESS */
-        @media (max-width: 900px) {
-            .timeline::before {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 20px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item::after,
-            .timeline-item:nth-child(even)::after {
-                left: 10px;
-                right: auto;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                text-align: left;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-item-content::after {
-                border-width: 10px 10px 10px 0;
-                border-color: transparent white transparent transparent;
-                right: auto;
-                left: -15px;
-            }
-
-            .timeline-item-content {
-                margin: 0;
-            }
-
-            #profil .profile-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav ul {
-                display: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #hero h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+        @media (max-width: 600px) {
+            #hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">ZKD.</div>
-                <ul>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#pendidikan">Pendidikan</a></li>
-                    <li><a href="#organisasi">Organisasi</a></li>
-                    <li><a href="#portofolio">Portofolio</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ZKD.</div>
+                <ul>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#keahlian">Keahlian</a></li>
+                    <li><a href="#pendidikan">Pendidikan</a></li>
+                    <li><a href="#organisasi">Organisasi</a></li>
+                    <li><a href="#portofolio">Portofolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <section id="hero" class="js-fade-in">
-        <div class="container">
-            <h1>Halo, Saya Zia Kahila Dagna 👋</h1>
-            <p>Siswi SMK Informatika Utama Jurusan Rekayasa Perangkat Lunak (RPL).</p>
-            <a href="#portofolio" class="cta-button">Lihat Karya Saya</a>
-        </div>
-    </section>
+    <section id="hero" class="js-fade-in">
+        <div class="container">
+            <h1>Halo, Saya Zia Kahila Dagna 👋</h1>
+            <p>Siswi SMK Informatika Utama Jurusan Rekayasa Perangkat Lunak (RPL).</p>
+            <a href="#portofolio" class="cta-button">Lihat Karya Saya</a>
+        </div>
+    </section>
 
-    <section id="profil" class="js-fade-in">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <div class="profile-content">
-                <img src="https://via.placeholder.com/200/007bff/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
-                <div class="profile-text">
-                    <p>Saya Zia Kahila Dagna, siswi SMK Informatika Utama jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan pada bidang pengembangan web dan desain digital. Saya terbiasa menggunakan berbagai tools seperti Visual Studio Code dan Canva, serta memahami dasar-dasar HTML, CSS, dan Laravel.
+    <section id="profil" class="js-fade-in">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="profile-content">
+                <img src="https://via.placeholder.com/200/007bff/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
+                <div class="profile-text">
+                    <p>Saya **Zia Kahila Dagna**, siswi **SMK Informatika Utama** jurusan **Rekayasa Perangkat Lunak (RPL)** yang memiliki ketertarikan pada bidang pengembangan web dan desain digital. Saya terbiasa menggunakan berbagai *tools* seperti **Visual Studio Code** dan **Canva**, serta memahami dasar-dasar HTML, CSS, dan Laravel.
 
 Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belajar pentingnya kerja sama tim, tanggung jawab, dan manajemen waktu dalam menyelesaikan tugas dengan baik.</p>
-                    
-                    <p><strong>Email:</strong>ziakahiladagnazia@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    
+                    <p><strong>Email:</strong> ziakahiladagnazia@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="keahlian" class="js-fade-in">
+        <div class="container">
+            <h2>Keahlian Teknis</h2>
+            <div class="skill-grid">
+                
+                <div class="skill-item">
+                    <h3>Frontend Development</h3>
+                    <p>Menguasai dasar-dasar **HTML5** dan **CSS3** untuk membangun struktur dan gaya *website* yang rapi dan responsif.</p>
+                    <p class="tech-stack">**Tools:** Bootstrap, CSS Flexbox & Grid</p>
+                </div>
 
-    <section id="pendidikan" class="js-fade-in">
-        <div class="container">
-            <h2>Riwayat Pendidikan</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
-                        <h4>SMK Informatika Utama</h4>
-                        <p>Jurusan: Rekayasa Perangkat Lunak (RPL)</p>
-                        <p>Fokus pada pengembangan perangkat lunak dan aplikasi berbasis web.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2021 - 2024</span>
-                        <h4>MTs Darur Roja</h4>
-                        <p>Lulusan Madrasah Tsanawiyah.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2015 - 2021</span>
-                        <h4>MI Al Muhajiriyah</h4>
-                        <p>Lulusan Madrasah Ibtidaiyah.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="skill-item">
+                    <h3>Backend Development (Dasar)</h3>
+                    <p>Memahami konsep dasar pemrograman server dan *database*.</p>
+                    <p class="tech-stack">**Tools:** PHP (Dasar), Laravel (Dasar), MySQL (Dasar)</p>
+                </div>
 
-    <section id="organisasi" class="js-fade-in">
-        <div class="container">
-            <h2>Pengalaman Organisasi</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
-                        <h4>Anggota Karang Taruna (Katar)</h4>
-                        <p>Di Linngkungan Rt.02 Rw. 05 , Kec. Cinere , Kel. Cinere</p>
-                        <p>Berpartisipasi dalam kegiatan sosial dan kepemudaan di lingkungan sekitar.</p>
-                    </div>
-                </div
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
-                        <h4>Anggota English Club (EC)</h4>
-                        <p>SMK Informatika Utama</p>
-                        <p>Aktif mengikuti seluruh kegiatan
-                        English Club seperti,
-                        TMI (To Much Information),
-                        Vocab Jar, Penyampaian Materi,
-                        dan Ice Breaking.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <div class="skill-item">
+                    <h3>Desain Digital</h3>
+                    <p>Mampu merancang antarmuka pengguna sederhana dan membuat konten visual dasar.</p>
+                    <p class="tech-stack">**Tools:** Canva, Figma (Dasar)</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h3>Version Control</h3>
+                    <p>Memahami pentingnya *version control* dalam kerja tim pengembangan perangkat lunak.</p>
+                    <p class="tech-stack">**Tools:** Git (Dasar), GitHub</p>
+                </div>
+                
+                <div class="skill-item">
+                    <h3>Software Testing</h3>
+                    <p>Mampu melakukan pengujian dasar (*testing*) pada aplikasi web untuk menemukan *bug* sederhana.</p>
+                    <p class="tech-stack">**Skills:** Black Box Testing</p>
+                </div>
 
-    <section id="portofolio" class="js-fade-in">
-        <div class="container">
-            <h2>Karya Website</h2>
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=E-Commerce+Project" alt="Screenshoot Aplikasi E-Commerce">
-                    <div class="portfolio-info">
-                        <h3>Mockup Website E-Commerce</h3>
-                        <p>Proyek kelas untuk merancang antarmuka keranjang belanja dan *checkout* menggunakan HTML dan CSS.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3, Vanilla JS, Bootstrap</p>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pendidikan" class="js-fade-in">
+        <div class="container">
+            <h2>Riwayat Pendidikan</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>SMK Informatika Utama</h4>
+                        <p>Jurusan: **Rekayasa Perangkat Lunak (RPL)**</p>
+                        <p>Fokus pada pengembangan perangkat lunak dan aplikasi berbasis web.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h4>MTs Darur Roja</h4>
+                        <p>Lulusan Madrasah Tsanawiyah.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2015 - 2021</span>
+                        <h4>MI Al Muhajiriyah</h4>
+                        <p>Lulusan Madrasah Ibtidaiyah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/28a745/ffffff?text=Sistem+Absensi+Web" alt="Screenshoot Aplikasi Data Visualisasi">
-                    <div class="portfolio-info">
-                        <h3>Sistem Absensi Sederhana (Web)</h3>
-                        <p>Simulasi sistem absensi siswa berbasis web, menggunakan input data sederhana.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML, CSS, PHP (Dasar), MySQL (Dasar)</p>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/343a40/ffffff?text=Landing+Page+RPL" alt="Screenshoot Website Company Profile">
-                    <div class="portfolio-info">
-                        <h3>Landing Page Profil Jurusan RPL</h3>
-                        <p>Desain *landing page* responsif untuk mempromosikan jurusan RPL di sekolah.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3 (Flexbox), Canva (Design Mockup)</p>
-                    </div>
-                </div>
+    <section id="organisasi" class="js-fade-in">
+        <div class="container">
+            <h2>Pengalaman Organisasi</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Anggota Karang Taruna (Katar)</h4>
+                        <p>Di Lingkungan Rt.02 Rw. 05, Kec. Cinere, Kel. Cinere</p>
+                        <p>Berpartisipasi aktif dalam kegiatan sosial dan kepemudaan di lingkungan sekitar.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Anggota English Club (EC)</h4>
+                        <p>SMK Informatika Utama</p>
+                        <p>Aktif mengikuti seluruh kegiatan, termasuk TMI, Vocab Jar, Penyampaian Materi, dan Ice Breaking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            </div>
-        </div>
-    </section>
+    <section id="portofolio" class="js-fade-in">
+        <div class="container">
+            <h2>Karya Website</h2>
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=E-Commerce+Project" alt="Screenshoot Aplikasi E-Commerce">
+                    <div class="portfolio-info">
+                        <h3>Mockup Website E-Commerce</h3>
+                        <p>Rancangan *front-end* untuk platform belanja dengan keranjang dan *checkout* statis.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3, Bootstrap</p>
+                    </div>
+                </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Zia Kahila Dagna | Portofolio Siswi RPL.</p>
-        </div>
-    </footer>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/28a745/ffffff?text=Sistem+Absensi+Web" alt="Screenshoot Aplikasi Data Visualisasi">
+                    <div class="portfolio-info">
+                        <h3>Sistem Absensi Sederhana (Web)</h3>
+                        <p>Simulasi input data absensi dasar, menggunakan PHP dan MySQL untuk koneksi database.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML, CSS, PHP (Dasar), MySQL</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/343a40/ffffff?text=Landing+Page+RPL" alt="Screenshoot Website Company Profile">
+                    <div class="portfolio-info">
+                        <h3>Landing Page Profil Jurusan RPL</h3>
+                        <p>Desain *landing page* responsif untuk mempromosikan jurusan RPL di sekolah.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3 (Flexbox), Canva</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/ffc107/343a40?text=Kalkulator+JS" alt="Screenshoot Kalkulator Sederhana">
+                    <div class="portfolio-info">
+                        <h3>Aplikasi Kalkulator Sederhana</h3>
+                        <p>Aplikasi kalkulator berbasis web murni menggunakan JavaScript DOM Manipulation.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML, CSS, Vanilla JavaScript</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/17a2b8/ffffff?text=Blog+Statik+Template" alt="Screenshoot Blog Statik">
+                    <div class="portfolio-info">
+                        <h3>Template Blog Statik</h3>
+                        <p>Perancangan tata letak (*layout*) blog sederhana dengan fokus pada tampilan yang bersih dan mudah dibaca.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3, Minimalist Design</p>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400/dc3545/ffffff?text=Basic+CRUD+Form" alt="Screenshoot Form CRUD">
+                    <div class="portfolio-info">
+                        <h3>Form Input Data CRUD Dasar</h3>
+                        <p>Implementasi fungsi Create, Read, Update, Delete (CRUD) sederhana untuk data inventaris.</p>
+                        <p class="tech-stack">**Tech Stack:** PHP, MySQL, HTML (Form)</p>
+                    </div>
+                </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Interaksi Fade-In on Scroll
-            const faders = document.querySelectorAll('.js-fade-in');
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zia Kahila Dagna | Portofolio Siswi RPL.</p>
+        </div>
+    </footer>
 
-            const appearOptions = {
-                threshold: 0.2, 
-                rootMargin: "0px 0px -50px 0px" 
-            };
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Interaksi Fade-In on Scroll
+            const faders = document.querySelectorAll('.js-fade-in');
 
-            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
-                    entry.target.classList.add('is-visible');
-                    appearOnScroll.unobserve(entry.target);
-                });
-            }, appearOptions);
+            const appearOptions = {
+                threshold: 0.2, 
+                rootMargin: "0px 0px -50px 0px" 
+            };
 
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
+            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+                    entry.target.classList.add('is-visible');
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
 
-            // 2. Interaksi Scroll Halus (Smooth Scrolling)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
 
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        const headerHeight = document.querySelector('header').offsetHeight; 
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+            // 2. Interaksi Scroll Halus (Smooth Scrolling)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
-            // 3. Efek Klik Portofolio
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    alert('Detail proyek ' + item.querySelector('h3').innerText + ' akan ditampilkan di sini.');
-                });
-            });
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
 
-        });
-    </script>
+            // 3. Efek Klik Portofolio
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    alert('Anda mengklik proyek: ' + item.querySelector('h3').innerText);
+                });
+            });
+
+        });
+    </script>
 
 </body>
 </html>
-
-
-tolong saya mau buat portofolio nya ada banyak tabelnya
