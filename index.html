@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Kreatif Interaktif | Zia Kahila Dagna</title>
+    <title>Portofolio | Zia Kahila Dagna (RPL)</title>
     <style>
         /* ====================
            CSS STYLES 
            ==================== */
         :root {
-            --primary-color: #ff6b6b; /* Merah cerah */
-            --secondary-color: #48dbfb; /* Biru cerah */
-            --dark-color: #2c3e50; /* Biru tua */
-            --light-color: #ecf0f1; /* Abu muda */
-            --bg-color: #f5f6fa; /* Hampir putih */
+            --primary-color: #007bff; /* Biru cerah (Informatika) */
+            --secondary-color: #28a745; /* Hijau (Kreatif) */
+            --dark-color: #343a40; /* Abu tua */
+            --light-color: #f8f9fa; /* Abu muda */
+            --bg-color: #ffffff; /* Putih */
             --font-main: 'Arial', sans-serif;
         }
 
@@ -79,7 +79,7 @@
 
         /* HERO SECTION */
         #hero {
-            background: linear-gradient(135deg, var(--dark-color), #34495e);
+            background: linear-gradient(135deg, var(--primary-color), #0056b3);
             color: white;
             padding: 6rem 0;
             text-align: center;
@@ -88,7 +88,7 @@
         #hero h1 {
             font-size: 3rem;
             margin-bottom: 0.5rem;
-            color: var(--primary-color);
+            color: var(--secondary-color);
         }
 
         #hero p {
@@ -98,7 +98,7 @@
 
         .cta-button {
             display: inline-block;
-            background: var(--primary-color);
+            background: var(--secondary-color);
             color: white;
             padding: 10px 25px;
             text-decoration: none;
@@ -108,7 +108,7 @@
         }
 
         .cta-button:hover {
-            background-color: #e74c3c;
+            background-color: #1e7e34;
             transform: scale(1.05);
         }
 
@@ -125,7 +125,7 @@
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--primary-color);
+            color: var(--dark-color);
             position: relative;
             display: inline-block;
         }
@@ -135,7 +135,7 @@
             display: block;
             width: 50%;
             height: 3px;
-            background: var(--secondary-color);
+            background: var(--primary-color);
             margin: 10px auto 0;
         }
 
@@ -155,13 +155,37 @@
             height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--secondary-color);
+            border: 5px solid var(--primary-color);
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
         .profile-text {
             max-width: 600px;
         }
+        
+        .profile-text ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        
+        .profile-text li {
+            margin-bottom: 5px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .profile-text li::before {
+            content: '•';
+            color: var(--secondary-color);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            position: absolute;
+            left: 0;
+        }
+
 
         /* TIMELINE (PENDIDIKAN & ORGANISASI) */
         .timeline {
@@ -175,7 +199,7 @@
             content: '';
             position: absolute;
             width: 4px;
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             top: 0;
             bottom: 0;
             left: 50%;
@@ -201,6 +225,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: left;
             transition: transform 0.3s;
+            border-top: 5px solid var(--secondary-color);
         }
         
         .timeline-item-content:hover {
@@ -213,8 +238,8 @@
             width: 20px;
             height: 20px;
             right: -10px;
-            background-color: var(--primary-color);
-            border: 4px solid var(--secondary-color);
+            background-color: var(--secondary-color);
+            border: 4px solid var(--primary-color);
             top: 15px;
             border-radius: 50%;
             z-index: 1;
@@ -264,6 +289,7 @@
             font-size: 0.9rem;
             display: block;
             margin-bottom: 10px;
+            font-weight: bold;
         }
 
         /* PORTFOLIO */
@@ -306,8 +332,9 @@
 
         .tech-stack {
             font-size: 0.85rem;
-            color: #7f8c8d;
+            color: var(--primary-color);
             font-style: italic;
+            font-weight: 600;
         }
         
         /* FOOTER */
@@ -375,7 +402,7 @@
             }
             
             nav ul {
-                display: none; /* Sembunyikan navigasi di mobile, bisa diganti dengan Hamburger Menu */
+                display: none;
             }
         }
 
@@ -394,7 +421,7 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">Kreatif.</div>
+                <div class="logo">ZiaDagna.</div>
                 <ul>
                     <li><a href="#profil">Profil</a></li>
                     <li><a href="#pendidikan">Pendidikan</a></li>
@@ -408,19 +435,27 @@
     <section id="hero" class="js-fade-in">
         <div class="container">
             <h1>Halo, Saya Zia Kahila Dagna 👋</h1>
-            <p>Seorang Pengembang Website Kreatif dan Inovatif</p>
+            <p>Siswi Rekayasa Perangkat Lunak (RPL) dari SMK Informatika Utama.</p>
             <a href="#portofolio" class="cta-button">Lihat Karya Saya</a>
         </div>
     </section>
 
     <section id="profil" class="js-fade-in">
         <div class="container">
-            <h2>Profil Saya</h2>
+            <h2>Tentang Saya & Keahlian</h2>
             <div class="profile-content">
-                <img src="https://via.placeholder.com/200/48dbfb/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
+                <img src="https://via.placeholder.com/200/007bff/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
                 <div class="profile-text">
-                    <p>Saya adalah **Zia Kahila Dagna**, individu yang *passionate* dalam pengembangan website, berfokus pada pengalaman pengguna (UX) yang menarik dan performa yang optimal. Berpengalaman dalam bekerja secara tim dan memiliki latar belakang kuat di bidang **Rekayasa Perangkat Lunak**. Saya percaya kombinasi kreativitas dan teknologi adalah kunci solusi digital yang sukses.</p>
-                    <p><strong>Lokasi:</strong> [Kota Anda] | <strong>Email:</strong> [Email Anda]</p>
+                    <p>Saya **Zia Kahila Dagna**, siswi aktif jurusan **Rekayasa Perangkat Lunak (RPL)**. Saya bersemangat dalam pengembangan web dan memiliki dasar yang kuat dalam pemrograman, desain, serta manajemen data. Berbekal pengalaman organisasi, saya mampu bekerja sama tim dan bertanggung jawab.</p>
+                    
+                    <h4>Keahlian Teknis (Sesuai CV):</h4>
+                    <ul>
+                        <li>Menguasai bahasa pemrograman HTML, CSS, JavaScript, dan *framework* lainnya.</li>
+                        <li>Terampil menggunakan Visual Studio Code dan melakukan pengelolaan *database* dasar.</li>
+                        <li>Mampu merancang antarmuka pengguna dasar dengan Canva.</li>
+                        <li>Memiliki etika kerja, disiplin, dan sangat bertanggung jawab.</li>
+                    </ul>
+                    <p><strong>Status:</strong> Siswi RPL | <strong>Email:</strong> [Email Anda]</p>
                 </div>
             </div>
         </div>
@@ -432,18 +467,24 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2018 - 2022</span>
-                        <h4>Sarjana Rekayasa Perangkat Lunak</h4>
-                        <p>Universitas Teknologi [Nama Universitas]</p>
-                        <p>Fokus studi pada Pengembangan Website Full-Stack, Arsitektur Software, dan Desain Interaksi. IPK: 3.85/4.00.</p>
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>SMK Informatika Utama</h4>
+                        <p>Jurusan: **Rekayasa Perangkat Lunak (RPL)**</p>
+                        <p>Fokus pada pengembangan perangkat lunak dan aplikasi berbasis web.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2015 - 2018</span>
-                        <h4>Sekolah Menengah Atas (Rekayasa Perangkat Lunak)</h4>
-                        <p>SMKN [Nama Sekolah]</p>
-                        <p>Fokus pada dasar-dasar pemrograman web dan basis data.</p>
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h4>MTs Darur Roja</h4>
+                        <p>Lulusan Madrasah Tsanawiyah.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2015 - 2021</span>
+                        <h4>MI Al Muhajiriyah</h4>
+                        <p>Lulusan Madrasah Ibtidaiyah.</p>
                     </div>
                 </div>
             </div>
@@ -456,18 +497,26 @@
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2020 - 2021</span>
-                        <h4>Kepala Divisi Website dan Media Kreatif</h4>
-                        <p>Himpunan Mahasiswa Teknik (HMT)</p>
-                        <p>Bertanggung jawab atas desain, pengembangan, dan pemeliharaan website resmi himpunan.</p>
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Staf Komunikasi dan Sosialisasi</h4>
+                        <p>Komunitas Kreatif Siswa SMK</p>
+                        <p>Mengelola publikasi kegiatan kreatif dan sosialisasi program kerja di lingkungan sekolah.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2019 - 2020</span>
-                        <h4>Anggota Tim Kreatif</h4>
-                        <p>UKM Fotografi dan Videografi</p>
-                        <p>Mengelola publikasi konten visual untuk berbagai acara kampus.</p>
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h4>Anggota Tim Web dan Media</h4>
+                        <p>Himpunan Siswa RPL</p>
+                        <p>Membantu pemeliharaan *website* dan mendokumentasikan kegiatan organisasi.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Anggota Aktif Club BCQ (Bahasa, Coding, Qur'an)</h4>
+                        <p>SMK Informatika Utama</p>
+                        <p>Berpartisipasi aktif di sub-divisi *Coding* untuk proyek-proyek pemrograman sederhana.</p>
                     </div>
                 </div>
             </div>
@@ -476,33 +525,33 @@
 
     <section id="portofolio" class="js-fade-in">
         <div class="container">
-            <h2>Portofolio Pembuatan Website</h2>
+            <h2>Karya Website</h2>
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Screenshoot+1" alt="Screenshoot Aplikasi E-Commerce">
+                    <img src="https://via.placeholder.com/600x400/007bff/ffffff?text=E-Commerce+Project" alt="Screenshoot Aplikasi E-Commerce">
                     <div class="portfolio-info">
-                        <h3>Website E-Commerce Modern</h3>
-                        <p>Platform belanja online dengan fitur keranjang, *checkout*, dan manajemen produk yang dinamis.</p>
-                        <p class="tech-stack">**Tech Stack:** React.js, Node.js (Express), MongoDB, Redux</p>
+                        <h3>Mockup Website E-Commerce</h3>
+                        <p>Proyek kelas untuk merancang antarmuka keranjang belanja dan *checkout* menggunakan HTML dan CSS.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3, Vanilla JS, Bootstrap</p>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/48dbfb/ffffff?text=Screenshoot+2" alt="Screenshoot Aplikasi Data Visualisasi">
+                    <img src="https://via.placeholder.com/600x400/28a745/ffffff?text=Sistem+Absensi+Web" alt="Screenshoot Aplikasi Data Visualisasi">
                     <div class="portfolio-info">
-                        <h3>Dashboard Data Visualisasi</h3>
-                        <p>Aplikasi untuk menampilkan data real-time menggunakan grafik interaktif dan peta.</p>
-                        <p class="tech-stack">**Tech Stack:** Vue.js, D3.js, Firebase, Sass/SCSS</p>
+                        <h3>Sistem Absensi Sederhana (Web)</h3>
+                        <p>Simulasi sistem absensi siswa berbasis web, menggunakan input data sederhana.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML, CSS, PHP (Dasar), MySQL (Dasar)</p>
                     </div>
                 </div>
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/2c3e50/ffffff?text=Screenshoot+3" alt="Screenshoot Website Company Profile">
+                    <img src="https://via.placeholder.com/600x400/343a40/ffffff?text=Landing+Page+RPL" alt="Screenshoot Website Company Profile">
                     <div class="portfolio-info">
-                        <h3>Website Company Profile</h3>
-                        <p>Situs *landing page* responsif dan *SEO friendly* untuk perusahaan rintisan.</p>
-                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3 (Flexbox/Grid), Vanilla JS, Bootstrap</p>
+                        <h3>Landing Page Profil Jurusan RPL</h3>
+                        <p>Desain *landing page* responsif untuk mempromosikan jurusan RPL di sekolah.</p>
+                        <p class="tech-stack">**Tech Stack:** HTML5, CSS3 (Flexbox), Canva (Design Mockup)</p>
                     </div>
                 </div>
 
@@ -512,23 +561,19 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Zia Kahila Dagna | Dibuat dengan Kreativitas dan Kode.</p>
+            <p>&copy; 2025 Zia Kahila Dagna | Portofolio Siswi RPL.</p>
         </div>
     </footer>
 
     <script>
-        // ====================
-        // JAVASCRIPT INTERAKTIF
-        // ====================
-
         document.addEventListener('DOMContentLoaded', () => {
             
             // 1. Interaksi Fade-In on Scroll
             const faders = document.querySelectorAll('.js-fade-in');
 
             const appearOptions = {
-                threshold: 0.2, // Mulai terlihat ketika 20% elemen masuk viewport
-                rootMargin: "0px 0px -50px 0px" // Margin untuk trigger lebih awal
+                threshold: 0.2, 
+                rootMargin: "0px 0px -50px 0px" 
             };
 
             const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
@@ -554,7 +599,6 @@
                     const targetElement = document.querySelector(targetId);
                     
                     if (targetElement) {
-                        // Tambahkan offset untuk menghindari header sticky
                         const headerHeight = document.querySelector('header').offsetHeight; 
                         const elementPosition = targetElement.getBoundingClientRect().top;
                         const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
@@ -567,11 +611,11 @@
                 });
             });
 
-            // 3. Efek Hover untuk Portofolio (Opsional: Sudah diatasi dengan CSS)
+            // 3. Efek Klik Portofolio
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             portfolioItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    alert('Anda mengklik Portofolio: ' + item.querySelector('h3').innerText + '. Detail proyek bisa dibuka di halaman terpisah atau modal pop-up.');
+                    alert('Detail proyek ' + item.querySelector('h3').innerText + ' akan ditampilkan di sini.');
                 });
             });
 
