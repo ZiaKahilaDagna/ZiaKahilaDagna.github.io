@@ -61,10 +61,12 @@
       align-items: center;
       justify-content: space-between;
       gap: 40px;
+      flex-wrap: wrap;
     }
 
     .hero-text {
       flex: 1;
+      min-width: 300px;
     }
 
     .hero-text h2 {
@@ -78,7 +80,7 @@
     }
 
     .hero img {
-      width: 300px;
+      width: 280px;
       border-radius: 50%;
       box-shadow: 0 5px 20px rgba(0,0,0,0.15);
     }
@@ -113,10 +115,12 @@
       margin-bottom: 10px;
     }
 
-    .portfolio img {
+    .portfolio img, .cert img {
       width: 100%;
       border-radius: 12px;
       margin-bottom: 10px;
+      object-fit: cover;
+      height: 200px;
     }
 
     footer {
@@ -127,7 +131,6 @@
       margin-top: 60px;
     }
 
-    /* Tombol scroll top */
     #scrollTopBtn {
       display: none;
       position: fixed;
@@ -146,6 +149,11 @@
 
     #scrollTopBtn:hover {
       background-color: #005ecb;
+    }
+
+    .cert p {
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
@@ -193,70 +201,4 @@
   </section>
 
   <section id="organisasi">
-    <h2 class="section-title">Pengalaman Organisasi</h2>
-    <div class="org">
-      <div class="card">
-        <h3>Karang Taruna</h3>
-        <p>Anggota aktif di lingkungan RT 02 RW 05, berperan dalam kegiatan sosial & remaja.</p>
-      </div>
-      <div class="card">
-        <h3>English Club</h3>
-        <p>Anggota di SMK Informatika Utama, berlatih komunikasi bahasa Inggris secara aktif.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="sertifikat">
-    <h2 class="section-title">Sertifikat</h2>
-    <div class="cert">
-      <div class="card">
-        <h3>Sertifikat 1</h3>
-        <p>Sertifikat Pelatihan Dasar Pemrograman Web</p>
-      </div>
-      <div class="card">
-        <h3>Sertifikat 2</h3>
-        <p>Sertifikat Workshop Desain UI/UX untuk Pemula</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <h2 class="section-title">Portofolio Proyek</h2>
-    <div class="portfolio">
-      <div class="card">
-        <img src="https://i.pinimg.com/736x/8a/8a/f3/8a8af33bb3f0a3248a4b7d13cc4c0ccf.jpg" alt="Online Shop Project">
-        <h3>Online Shop Website</h3>
-        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
-        <p>Membuat website toko online sederhana dengan fitur katalog produk dan halaman detail produk.</p>
-      </div>
-      <div class="card">
-        <img src="https://i.pinimg.com/736x/21/70/92/217092bbd48f0e6a9e59230a4d0b5416.jpg" alt="CRUD Product Project">
-        <h3>CRUD Penjualan Produk</h3>
-        <p><strong>Tech Stack:</strong> HTML, Bootstrap, PHP, MySQL</p>
-        <p>Membuat aplikasi CRUD untuk pengelolaan data produk menggunakan template dan koneksi database.</p>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Zia Kahila Dagna | Portfolio Magang RPL</p>
-  </footer>
-
-  <button id="scrollTopBtn">↑</button>
-
-  <script>
-    // Tombol scroll ke atas
-    const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollTopBtn.style.display = "block";
-      } else {
-        scrollTopBtn.style.display = "none";
-      }
-    };
-    scrollTopBtn.onclick = function() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  </script>
-</body>
-</html>
+    <h2
