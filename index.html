@@ -187,18 +187,89 @@
     <div class="edu">
       <div class="card">
         <h3>SMK Informatika Utama</h3>
-        <p>Jurusan Rekayasa Perangkat Lunak (RPL) — Kelas XI</p>
+        <p>Jurusan Rekayasa Perangkat Lunak (RPL) | 2024-sekarang</p>
       </div>
       <div class="card">
         <h3>MTs Darur Roja</h3>
-        <p>Lulus tahun 2022</p>
+        <p>Lulus tahun 2024</p>
       </div>
       <div class="card">
         <h3>MI Al Muhajiriyah</h3>
-        <p>Lulus tahun 2019</p>
+        <p>Lulus tahun 2021</p>
       </div>
     </div>
   </section>
 
   <section id="organisasi">
-    <h2
+    <h2 class="section-title">Pengalaman Organisasi</h2>
+    <div class="org">
+      <div class="card">
+        <h3>Karang Taruna</h3>
+        <p>Anggota aktif di lingkungan RT 02 RW 05, berperan dalam kegiatan sosial & remaja.</p>
+      </div>
+      <div class="card">
+        <h3>English Club</h3>
+        <p>Anggota English Club SMK Informatika Utama, berlatih komunikasi bahasa Inggris dan bekerja secara tim.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sertifikat">
+    <h2 class="section-title">Sertifikat</h2>
+    <div class="cert">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/43/7b/2e/437b2e87284b35a7cf3f2ed2c653256b.jpg" alt="Sertifikat 1">
+        <h3>Sertifikat 1</h3>
+        <p>Pelatihan Dasar Pemrograman Web</p>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/19/ed/10/19ed108f554c479f17f50a1b6461ec7b.jpg" alt="Sertifikat 2">
+        <h3>Sertifikat 2</h3>
+        <p>Workshop Desain UI/UX untuk Pemula</p>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:20px; color:#555;">
+      💡 Kamu bisa menambahkan sertifikat baru dengan menyalin format <code>&lt;div class="card"&gt;...&lt;/div&gt;</code> di atas dan ganti URL gambar sertifikat kamu.
+    </p>
+  </section>
+
+  <section id="portfolio">
+    <h2 class="section-title">Portofolio Proyek</h2>
+    <div class="portfolio">
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/8a/8a/f3/8a8af33bb3f0a3248a4b7d13cc4c0ccf.jpg" alt="Online Shop Project">
+        <h3>Online Shop Website</h3>
+        <p><strong>Tech Stack:</strong> HTML dan CSS</p>
+        <p>Membuat website statis toko online sederhana dengan HTML dan CSS.</p>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/21/70/92/217092bbd48f0e6a9e59230a4d0b5416.jpg" alt="CRUD Product Project">
+        <h3>CRUD Penjualan Produk</h3>
+        <p><strong>Tech Stack:</strong> HTML, Bootstrap, PHP, MySQL, Laragon, Laravel v.7, Database, dan Github</p>
+        <p>Membuat aplikasi CRUD untuk pengelolaan data penjualan produk menggunakan template dan koneksi database.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Zia Kahila Dagna | Portfolio PKL</p>
+  </footer>
+
+  <button id="scrollTopBtn">↑</button>
+
+  <script>
+    // Tombol scroll ke atas
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>
