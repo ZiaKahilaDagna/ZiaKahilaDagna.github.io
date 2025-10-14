@@ -1,467 +1,130 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Zia Kahila Dagna (RPL)</title>
-    <style>
-        /* ====================
-           CSS STYLES 
-           ==================== */
-        :root {
-            --primary-color: #007bff; /* Biru cerah (Informatika) */
-            --secondary-color: #28a745; /* Hijau (Kreatif) */
-            --dark-color: #343a40; /* Abu tua */
-            --light-color: #f8f9fa; /* Abu muda */
-            --bg-color: #ffffff; /* Putih */
-            --font-main: 'Arial', sans-serif;
-            /* Tambahan CSS untuk Highlight Navigasi Aktif */
-            --nav-active-bg: #28a745; /* Menggunakan secondary color sebagai background aktif */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            background-color: var(--bg-color);
-            color: var(--dark-color);
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background: var(--dark-color);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            display: block;
-            transition: color 0.3s, background-color 0.3s; /* Menambahkan transisi background */
-            border-radius: 4px;
-        }
-
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* CSS untuk Navigasi Aktif */
-        nav ul li a.active {
-            color: var(--dark-color); 
-            background-color: var(--secondary-color); /* Warna latar belakang aktif */
-            font-weight: bold;
-        }
-
-        /* HERO SECTION */
-        #hero {
-            background: linear-gradient(135deg, var(--primary-color), #0056b3);
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--secondary-color);
-        }
-
-        /* Mengubah p menjadi span agar mudah di manipulasi JS */
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            min-height: 25px; /* Menjaga layout agar tidak bergeser saat typing effect */
-        }
-        
-        .typing-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.5em;
-            background-color: white;
-            margin-left: 5px;
-            animation: blink 0.7s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        .cta-button:hover {
-            background-color: #1e7e34;
-            transform: scale(1.05);
-        }
-
-        /* MAIN CONTENT SECTION */
-        section {
-            padding: 60px 0;
-            text-align: center;
-        }
-        /* ... (CSS lainnya tidak diubah) ... */
-
-        section:nth-child(even) {
-            background-color: var(--light-color);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: var(--dark-color);
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 3px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-        }
-
-        /* PROFILE */
-        #profil .profile-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .profile-text {
-            max-width: 600px;
-        }
-        
-        .profile-text ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 15px;
-        }
-        
-        .profile-text li {
-            margin-bottom: 5px;
-            position: relative;
-            padding-left: 20px;
-            text-align: left; /* Penting untuk list */
-        }
-        
-        .profile-text li::before {
-            content: '•';
-            color: var(--secondary-color);
-            font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            position: absolute;
-            left: 0;
-        }
-
-        /* TIMELINE (PENDIDIKAN & ORGANISASI) */
-        .timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background-color: var(--primary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item-content {
-            padding: 20px 30px;
-            background: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s;
-            border-top: 5px solid var(--secondary-color);
-        }
-        
-        .timeline-item-content:hover {
-            transform: translateY(-5px);
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--secondary-color);
-            border: 4px solid var(--primary-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-item-content::after {
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            top: 22px;
-            z-index: 1;
-            right: -15px;
-            border: medium solid white;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-
-        .timeline-item:nth-child(even) .timeline-item-content::after {
-            content: " ";
-            height: 0;
-            width: 0;
-            position: absolute;
-            top: 22px;
-            z-index: 1;
-            left: -15px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
-
-        .timeline-item-content h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-
-        .timeline-date {
-            color: #7f8c8d;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* PORTOFOLIO & KEAHLIAN (Card Grid) */
-        #portofolio .portfolio-grid,
-        #keahlian .skill-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .portfolio-item, .skill-item {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s;
-            cursor: pointer;
-            min-height: 250px;
-        }
-
-        .portfolio-item:hover, .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-
-        .portfolio-info {
-            padding: 15px;
-        }
-
-        .portfolio-info h3, .skill-item h3 {
-            color: var(--dark-color);
-            margin-bottom: 5px;
-        }
-        
-        .skill-item {
-            padding: 20px;
-            border-left: 5px solid var(--primary-color);
-            text-align: center;
-        }
-        
-        .skill-item h3 {
-            color: var(--primary-color);
-        }
-
-        .tech-stack {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-style: italic;
-            font-weight: 600;
-        }
-        
-        /* FOOTER */
-        footer {
-            background: var(--dark-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-        
-        /* INTERACTIVITY (JavaScript/CSS) */
-        .js-fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        .js-fade-in.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* RESPONSIVENESS */
-        @media (max-width: 900px) {
-            .timeline::before { left: 20px; }
-            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
-            .timeline-item:nth-child(even) { left: 0; }
-            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
-            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
-            .timeline-item:nth-child(odd) .timeline-item-content::after { border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; right: auto; left: -15px; }
-            .timeline-item-content { margin: 0; }
-            #profil .profile-content { flex-direction: column; text-align: center; }
-            nav ul { display: none; }
-        }
-
-        @media (max-width: 600px) {
-            #hero h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio PKL — Zia Kahila Dagna</title>
+  <style>
+    :root{
+      --primary:#6C63FF;
+      --bg:#0f172a;
+      --card:#1e293b;
+      --text:#f1f5f9;
+      --muted:#94a3b8;
+      font-family:'Poppins',sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);line-height:1.6;}
+    header{display:flex;justify-content:space-between;align-items:center;padding:20px 10%;background:rgba(255,255,255,0.03);backdrop-filter:blur(6px);position:sticky;top:0;z-index:10;}
+    header h1{font-size:22px;color:var(--primary)}
+    nav a{color:var(--muted);margin:0 10px;text-decoration:none;transition:0.3s}
+    nav a:hover{color:var(--text)}
+    section{padding:60px 10%;max-width:1100px;margin:auto;}
+    h2{color:var(--primary);margin-bottom:10px;}
+    .card{background:var(--card);padding:20px;border-radius:12px;margin-bottom:20px;}
+    .flex{display:flex;flex-wrap:wrap;gap:20px;}
+    .col{flex:1 1 300px;}
+    .btn{background:var(--primary);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;transition:0.3s;}
+    .btn:hover{opacity:0.8}
+    .project{border-radius:10px;overflow:hidden;background:rgba(255,255,255,0.05);transition:0.3s;}
+    .project:hover{transform:translateY(-5px)}
+    .project img{width:100%;display:block;}
+    .project .content{padding:15px;}
+    .tech{display:inline-block;background:rgba(255,255,255,0.08);padding:5px 10px;border-radius:6px;font-size:12px;margin-right:5px;}
+    footer{text-align:center;padding:20px;color:var(--muted);}
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Zia Kahila Dagna</h1>
+    <nav>
+      <a href="#profil">Profil</a>
+      <a href="#pendidikan">Pendidikan</a>
+      <a href="#organisasi">Organisasi</a>
+      <a href="#portofolio">Portofolio</a>
+    </nav>
+  </header>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">ZKD.</div>
-                <ul>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#keahlian">Keahlian</a></li>
-                    <li><a href="#pendidikan">Pendidikan</a></li>
-                    <li><a href="#organisasi">Organisasi</a></li>
-                    <li><a href="#portofolio">Portofolio</a></li>
-                </ul>
-            </nav>
+  <section id="profil">
+    <h2>Profil</h2>
+    <div class="card">
+      <p>Halo! Saya <strong>Zia Kahila Dagna</strong>, siswi SMK Informatika Utama jurusan Rekayasa Perangkat Lunak. Saya memiliki ketertarikan besar dalam bidang pengembangan website, desain antarmuka, dan teknologi interaktif. Saat ini, saya sedang mempersiapkan diri untuk melaksanakan <strong>Praktik Kerja Lapangan (PKL)</strong> dan siap berkontribusi di lingkungan kerja profesional.</p>
+    </div>
+  </section>
+
+  <section id="pendidikan">
+    <h2>Pendidikan</h2>
+    <div class="card">
+      <strong>SMK Informatika Utama</strong>
+      <p>Jurusan: Rekayasa Perangkat Lunak (2022 - Sekarang)</p>
+    </div>
+    <div class="card">
+      <strong>MTs Darur Roja</strong>
+      <p>Lulus tahun 2022</p>
+    </div>
+    <div class="card">
+      <strong>MI Al Muhajiriyah</strong>
+      <p>Lulus tahun 2019</p>
+    </div>
+  </section>
+
+  <section id="organisasi">
+    <h2>Pengalaman Organisasi</h2>
+    <div class="card">
+      <strong>Karang Taruna</strong>
+      <p>Anggota aktif kegiatan sosial dan kemasyarakatan (2022 - Sekarang)</p>
+      <ul>
+        <li>Berpartisipasi dalam kegiatan sosial dan kerja bakti lingkungan.</li>
+        <li>Ikut serta dalam penyelenggaraan acara tingkat desa.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <strong>English Club</strong>
+      <p>Anggota (2023 - Sekarang)</p>
+      <ul>
+        <li>Aktif berlatih komunikasi dalam bahasa Inggris.</li>
+        <li>Mengikuti lomba dan kegiatan bertema edukatif serta literasi bahasa.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="portofolio">
+    <h2>Portofolio Pembuatan Website</h2>
+    <div class="flex">
+      <div class="col project">
+        <img src="https://via.placeholder.com/400x250?text=Screenshot+Website+Portfolio" alt="Screenshot Website Portfolio">
+        <div class="content">
+          <h3>Website Portfolio Personal</h3>
+          <p>Membuat website portofolio pribadi menggunakan HTML, CSS, dan JavaScript untuk menampilkan profil, pendidikan, serta proyek yang pernah dibuat.</p>
+          <div>
+            <span class="tech">HTML</span>
+            <span class="tech">CSS</span>
+            <span class="tech">JavaScript</span>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <section id="hero" class="js-fade-in">
-        <div class="container">
-            <h1>Halo, Saya Zia Kahila Dagna 👋</h1>
-            <p><span id="typing-text"></span><span class="typing-cursor"></span></p>
-            <a href="#portofolio" class="cta-button">Lihat Karya Saya</a>
+      <div class="col project">
+        <img src="https://via.placeholder.com/400x250?text=Screenshot+Website+Toko+Online" alt="Screenshot Website Toko Online">
+        <div class="content">
+          <h3>Website E-Commerce Simple</h3>
+          <p>Merancang dan mengembangkan prototipe website toko online sederhana dengan fitur tampilan produk, deskripsi, dan simulasi keranjang belanja.</p>
+          <div>
+            <span class="tech">HTML</span>
+            <span class="tech">TailwindCSS</span>
+            <span class="tech">JavaScript</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="profil" class="js-fade-in">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <div class="profile-content">
-                <img src="https://via.placeholder.com/200/007bff/ffffff?text=FOTO+ZIA" alt="Foto Profil Zia Kahila Dagna" class="profile-img">
-                <div class="profile-text">
-                    <p>Saya Zia Kahila Dagna, siswi jurusan Rekayasa Perangkat Lunak (RPL) yang memiliki ketertarikan pada bidang pengembangan web dan desain digital. Saya terbiasa menggunakan berbagai tools seperti Visual Studio Code dan Canva, serta memahami dasar-dasar HTML, CSS, dan Laravel.
+  <footer>
+    <p>© <span id="year"></span> Zia Kahila Dagna — Portofolio PKL</p>
+  </footer>
 
-Melalui pengalaman organisasi seperti Karang Taruna dan English Club, saya belajar pentingnya kerja sama tim, tanggung jawab, dan manajemen waktu dalam menyelesaikan tugas dengan baik.
-                    <p><strong>Email:</strong> ziakahiladagnazia@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="keahlian" class="js-fade-in">
-        <div class="container">
-            <h2>Keahlian Teknis</h2>
-            <div class="skill-grid">
-                
-                <div class="skill-item">
-                    <h3>Frontend Development</h3>
-                    <p>Menguasai dasar-dasar HTML, CSS, serta penggunaan Laravel dan konsep CRUD.</p>
-                    <p class="tech-stack">
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
