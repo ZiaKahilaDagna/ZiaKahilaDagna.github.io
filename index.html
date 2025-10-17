@@ -144,6 +144,8 @@
         }
 
         h2::after {
+            content: '';
+            display: block;
             width: 70px; /* Garis lebih pendek dan tebal */
             height: 4px; 
             background: var(--primary-color);
@@ -212,30 +214,56 @@
         }
 
         .skill-level {
+            height: 100%;
             background-color: var(--primary-color); 
-            border-radius: 8px;
-            font-weight: 600;
+            width: 0; 
+            transition: width 1.5s ease-out; 
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
             color: var(--secondary-color);
+            font-size: 0.9rem; /* Ukuran font di bar skill ditingkatkan */
+            font-weight: 600;
+            border-radius: 8px; /* Sudut melengkung */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
 
         /* PENDIDIKAN & ORGANISASI (Timeline) */
         .timeline {
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
+            padding: 20px 0;
             padding-bottom: 40px;
         }
 
         .timeline::before {
             width: 5px; /* Garis timeline lebih tebal */
             background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
             margin-left: -2.5px;
         }
         
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
         .timeline-item-content {
             padding: 25px;
             background: var(--light-color); 
             border-radius: 8px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            text-align: left;
             border-left: 6px solid var(--secondary-color); /* Border lebih tebal */
+            transition: transform 0.3s;
         }
 
         .timeline-item-content h4 {
@@ -245,19 +273,52 @@
             margin-bottom: 5px;
         }
 
+
         .timeline-item::after {
+            content: '';
+            position: absolute;
             width: 18px; /* Lingkaran lebih besar */
             height: 18px;
-            border: 5px solid var(--primary-color); 
-            background-color: var(--secondary-color); 
+            right: -9px;
+            background-color: var(--secondary-color); /* Krem */
+            border: 5px solid var(--primary-color); /* Merah Marun */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
         }
 
+        .timeline-item:nth-child(even)::after {
+            left: -9px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
+        
+        .timeline-date {
+            color: var(--primary-color); /* Merah Marun */
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
         /* PORTOFOLIO (Card Grid) */
+        #portofolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
         .portfolio-item {
+            background: var(--light-color); /* Putih */
             border-radius: 12px; /* Sudut lebih melengkung */
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Shadow lebih tebal */
             overflow: hidden;
-            background: var(--light-color);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .portfolio-item:hover {
@@ -266,12 +327,15 @@
         }
 
         .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border-bottom: 5px solid var(--secondary-color); /* Border lebih tebal */
             transition: opacity 0.3s;
         }
         
         .portfolio-item:hover img {
-            opacity: 0.9; /* Sedikit transparansi pada hover */
+            opacity: 0.9;
         }
 
         .portfolio-info {
@@ -279,32 +343,56 @@
         }
 
         .portfolio-info h3 {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Merah Marun */
+            margin-bottom: 5px;
             font-weight: 600;
         }
 
         .tech-stack {
             font-size: 0.9rem;
             color: var(--text-color);
+            font-style: italic;
             margin-top: 15px;
+            display: inline-block;
             font-weight: 400;
             background: var(--bg-color-alt); /* Background tag krem lembut */
             padding: 4px 8px;
             border-radius: 4px;
-            display: inline-block;
+        }
+        
+        /* INTERAKTIVITAS & ANIMASI */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         /* FOOTER */
         footer {
-            padding: 1.5rem 0; /* Padding footer ditingkatkan */
+            background: var(--dark-color); /* Hitam */
+            color: var(--secondary-color); /* Krem */
+            padding: 1.5rem 0;
+            text-align: center;
             font-size: 0.9rem;
         }
 
         /* RESPONSIVENESS */
         @media (max-width: 900px) {
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
+            
             #hero h1 { font-size: 3rem; }
             h2 { font-size: 2.2rem; }
-            
+
+            /* Aturan responsif untuk profil */
             #profil .profile-wrapper {
                 flex-direction: column;
                 align-items: center;
@@ -366,28 +454,38 @@
             <div class="skill-chart">
                 
                 <div class="skill-bar-container">
-                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>75%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="75"></div></div>
+                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
                 </div>
 
                 <div class="skill-bar-container">
-                    <div class="skill-label"><span>Konsep CRUD & Laravel (Dasar)</span><span>65%</span></div>
+                    <div class="skill-label"><span>Konsep CRUD & Laravel (Dasar)</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>60%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="60"></div></div>
+                </div>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Bekerja Sama Tim Maupun Mandiri</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Cepat Beradaptasi dengan Lingkungan Baru</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Manajemen Waktu yang Baik</span><span>65%</span></div>
                     <div class="skill-bar"><div class="skill-level" data-level="65"></div></div>
-                </div>
-
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>75%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="75"></div></div>
-                </div>
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Kerja Sama Tim & Adaptasi</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
                 </div>
 
             </div>
