@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Kreatif | Zia Kahila Dagna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Portofolio Profesional | Zia Kahila Dagna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         /* ====================
-           CSS STYLES - TEMA BIRU BARU
+           CSS STYLES - TEMA ULTRA-MODERN BIRU
            ==================== */
         :root {
-            --primary-color: #002147; /* Biru Tua (Dominan/Navy) */
-            --secondary-color: #4169E1; /* Biru Royal (Aksen/Highlight) */
-            --light-blue: #ADD8E6; /* Biru Muda */
-            --dark-color: #1a1a1a;
-            --light-color: #ffffff; 
-            --bg-color-main: #ffffff; 
-            --bg-color-alt: #f0f8ff; /* Biru sangat muda (AliceBlue) */
-            --text-color: #333333; 
+            --primary-color: #002147;      /* Biru Tua (Navy) */
+            --secondary-color: #4169E1;    /* Biru Royal (Aksen Utama) */
+            --light-blue: #D6E4FF;         /* Biru Sangat Muda (Background Sekunder) */
+            --accent-bg: #f0f8ff;          /* AliceBlue */
+            --light-color: #ffffff;        /* Putih */
+            --text-color: #1a1a1a;         /* Teks Gelap */
             --font-main: 'Poppins', sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+            --shadow-light: 0 4px 15px rgba(0, 33, 71, 0.1); /* Shadow halus */
         }
 
         * {
@@ -30,7 +32,7 @@
         body {
             font-family: var(--font-main);
             line-height: 1.6;
-            background-color: var(--bg-color-main);
+            background-color: var(--light-color);
             color: var(--text-color);
             scroll-behavior: smooth;
         }
@@ -41,15 +43,16 @@
             padding: 0 20px;
         }
 
-        /* HEADER & NAVIGATION */
+        /* --------------------------
+           1. HEADER & NAVIGATION
+           -------------------------- */
         header {
-            background: var(--primary-color); 
-            color: white;
+            background: var(--primary-color);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
 
         nav {
@@ -59,10 +62,10 @@
         }
 
         nav .logo {
-            font-size: 2rem;
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--light-blue); /* Logo Biru Muda */
-            letter-spacing: 1px;
+            color: var(--light-blue);
         }
 
         nav ul {
@@ -71,151 +74,321 @@
         }
 
         nav ul li a {
-            color: white;
+            color: var(--light-blue);
             text-decoration: none;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0.8rem;
             display: block;
-            transition: color 0.3s, background-color 0.3s;
-            border-radius: 5px;
             font-weight: 600;
+            transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: var(--primary-color);
-            background-color: var(--light-blue); /* Biru Muda sebagai latar belakang hover */
+            color: var(--secondary-color);
         }
 
-        /* HERO SECTION */
+        /* --------------------------
+           2. HERO SECTION
+           -------------------------- */
         #hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a60 100%); /* Gradien Biru Tua */
-            color: white;
-            padding: 10rem 0;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a60 100%);
+            color: var(--light-color);
+            padding: 12rem 0 10rem; /* Lebih besar */
             text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Efek miring di bawah */
         }
 
         #hero h1 {
-            font-size: 4rem;
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
             margin-bottom: 0.5rem;
-            color: var(--secondary-color); /* Biru Royal */
+            color: var(--light-blue);
             font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            color: var(--secondary-color); 
+            font-weight: 400;
         }
 
         .cta-button {
-            background: var(--secondary-color); /* Biru Royal */
-            box-shadow: 0 6px 15px rgba(65, 105, 225, 0.4); 
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 16px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            box-shadow: 0 8px 20px rgba(65, 105, 225, 0.4);
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-button:hover {
-            background-color: #5b82f0;
-            box-shadow: 0 8px 20px rgba(65, 105, 225, 0.6);
+            background-color: #315cd8;
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 30px rgba(65, 105, 225, 0.6);
         }
 
-        /* MAIN CONTENT SECTION */
+        /* --------------------------
+           3. MAIN CONTENT STYLE
+           -------------------------- */
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
         section:nth-child(odd) {
-            background-color: var(--bg-color-alt); /* AliceBlue */
+            background-color: var(--accent-bg); 
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
         }
 
         h2::after {
-            background: var(--secondary-color); /* Biru Royal */
+            content: '';
+            display: block;
+            width: 90px;
+            height: 5px; 
+            background: var(--secondary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
         
-        /* PROFIL */
+        /* --------------------------
+           4. PROFIL (Asimetris)
+           -------------------------- */
+        #profil .profile-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            text-align: left;
+            padding: 30px 40px;
+            background: var(--light-color);
+            border-radius: 15px;
+            box-shadow: var(--shadow-light); 
+        }
+        
+        #profil h2 { text-align: left; margin-bottom: 3rem; }
+        #profil h2::after { margin-left: 0; }
+
         #profil .profile-photo {
-            border: 6px solid var(--secondary-color); /* Border Biru Royal */
+            flex-shrink: 0;
+            width: 220px; /* Ukuran foto diperbesar */
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--secondary-color); /* Border Biru Royal yang tebal */
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
         }
 
-        /* KEAHLIAN (DIAGRAM BATANG CSS) */
+        #profil .profile-content {
+            flex-grow: 1;
+        }
+        
+        #profil .profile-content p {
+            font-size: 1.05rem;
+            margin-bottom: 18px;
+            font-weight: 300;
+        }
+
+        /* --------------------------
+           5. KEAHLIAN (Skill Bar Baru)
+           -------------------------- */
+        #keahlian { text-align: center; }
+
+        #keahlian .skill-chart {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 30px;
+            background: var(--light-color);
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Shadow sangat halus */
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .skill-bar {
+            background-color: var(--light-blue); /* Background Biru Muda */
+            border-radius: 5px;
+            height: 15px; /* Tinggi bar dikurangi agar terlihat elegan */
+            overflow: hidden;
+        }
+
         .skill-level {
-            background-color: var(--secondary-color); /* Biru Royal */
-            color: var(--light-color); /* Teks Putih di dalam bar */
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-color), #2049e6); /* Gradien Biru Royal */
+            width: 0;
+            transition: width 1.5s ease-out;
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: transparent; /* Persentase hanya di label atas */
         }
-
-        /* PENDIDIKAN & ORGANISASI (Timeline) */
+        
+        /* --------------------------
+           6. PENDIDIKAN & ORGANISASI (Timeline Lebih Tebal)
+           -------------------------- */
+        .timeline {
+            max-width: 900px;
+        }
+        
         .timeline::before {
-            background-color: var(--secondary-color); /* Garis Biru Royal */
+            width: 6px; /* Garis timeline lebih tebal */
+            background-color: var(--secondary-color);
+            left: 50%;
+            margin-left: -3px;
         }
 
         .timeline-item-content {
-            border-left: 6px solid var(--primary-color); /* Border Biru Tua */
+            border-left: 8px solid var(--light-blue); /* Border Biru Muda */
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s;
+        }
+        
+        .timeline-item-content:hover {
+            transform: scale(1.03);
+            border-left: 8px solid var(--secondary-color);
         }
 
         .timeline-item-content h4 {
-            color: var(--primary-color); /* Biru Tua */
+            color: var(--primary-color);
+            font-weight: 700;
         }
 
         .timeline-item::after {
-            background-color: var(--light-blue); /* Biru Muda */
-            border: 5px solid var(--secondary-color); /* Border Biru Royal */
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: var(--light-color); 
+            border: 6px solid var(--primary-color); /* Lingkaran Biru Tua */
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
         }
         
         .timeline-date {
-            color: var(--secondary-color); /* Biru Royal */
+            color: var(--secondary-color);
+            font-size: 1rem;
         }
         
-        /* PORTOFOLIO (Card Grid) - PENYESUAIAN UTAMA DI SINI */
+        /* --------------------------
+           7. PORTOFOLIO (Card Grid Lebih Menarik)
+           -------------------------- */
         #portofolio .portfolio-grid {
-            /* Dibuat lebih ringkas dan tetap 3 kolom */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
             max-width: 1000px; 
-            margin: 30px auto;
+            margin: 50px auto 0;
+        }
+
+        .portfolio-item {
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+            border: 1px solid var(--light-blue);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-10px); 
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
         .portfolio-item img {
-            width: 100%;
-            height: 180px; /* Sedikit lebih kecil */
-            object-fit: cover;
-            border-bottom: 4px solid var(--secondary-color); /* Border Biru Royal */
+            height: 200px;
+            border-bottom: 5px solid var(--secondary-color); 
         }
 
         .portfolio-info {
-            padding: 20px; /* Padding dikurangi */
+            padding: 25px;
+            background: var(--light-color);
         }
 
         .portfolio-info h3 {
-            color: var(--primary-color); /* Biru Tua */
-            font-size: 1.3rem; /* Ukuran judul disesuaikan */
-            margin-bottom: 5px;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 8px;
         }
 
-        /* Gaya untuk penjelasan singkat */
         .portfolio-info .short-desc {
-            font-size: 0.95rem;
-            color: var(--text-color);
-            margin-bottom: 12px;
-            line-height: 1.4;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
         }
 
         .tech-stack {
-            font-size: 0.85rem; 
-            color: var(--primary-color); /* Warna teks Biru Tua */
-            font-style: normal;
-            margin-top: 10px;
+            font-size: 0.85rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            background: var(--light-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-right: 8px;
             display: inline-block;
-            font-weight: 600;
-            background: var(--light-blue); /* Background Biru Muda */
-            padding: 4px 10px;
-            border-radius: 20px; /* Lebih melengkung seperti tag */
-            border: 1px solid var(--secondary-color);
         }
         
-        /* FOOTER */
+        /* --------------------------
+           8. FOOTER
+           -------------------------- */
         footer {
-            background: var(--primary-color); /* Biru Tua */
-            color: var(--light-blue); /* Biru Muda */
+            background: var(--primary-color);
+            color: var(--light-blue);
+            padding: 2rem 0;
+            font-size: 1rem;
         }
 
-        /* RESPONSIVENESS */
+
+        /* --------------------------
+           9. RESPONSIVENESS
+           -------------------------- */
         @media (max-width: 900px) {
-            /* ... (Aturan responsif lainnya sama) ... */
-             #portofolio .portfolio-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            #hero h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+            
+            #profil .profile-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            #profil h2 { text-align: center; margin-bottom: 3rem; }
+            #profil h2::after { margin: 10px auto 0; }
+            
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
+            
+            #portofolio .portfolio-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -230,9 +403,8 @@
                     <li><a href="#profil">Profil</a></li>
                     <li><a href="#keahlian">Keahlian</a></li>
                     <li><a href="#pendidikan">Edukasi</a></li>
-                    <li><a href="#organisasi">Organisasi</a></li>
                     <li><a href="#portofolio">Karya</a></li>
-                </ul>
+                    </ul>
             </nav>
         </div>
     </header>
@@ -240,8 +412,8 @@
     <section id="hero" class="js-fade-in">
         <div class="container">
             <h1>Zia Kahila Dagna</h1>
-            <p>JUNIOR WEB DEVELOPER</p>
-            <a href="#portofolio" class="cta-button">Lihat Portofolio</a>
+            <p>JUNIOR WEB DEVELOPER & DESAINER UI/UX</p>
+            <a href="#portofolio" class="cta-button">Jelajahi Proyek Saya <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
     
@@ -249,11 +421,15 @@
         <div class="container">
             <h2>Tentang Saya</h2>
             <div class="profile-wrapper">
-                <img src="https://via.placeholder.com/180/002147/ADD8E6?text=Foto+Profil+Zia" alt="Foto Profil Zia Kahila Dagna" class="profile-photo">
+                <img src="https://via.placeholder.com/220/002147/D6E4FF?text=Foto+Profil+Zia" alt="Foto Profil Zia Kahila Dagna" class="profile-photo">
                 <div class="profile-content">
-                    <p>Saya Zia Kahila Dagna, siswa SMK Informatika Utama jurusan Pengembangan Perangkat Lunak dan GIM (PPLG).</p>
-                    <p>Saya memiliki minat yang besar di bidang pengembangan web dan terus berusaha mengasah kemampuan saya di dunia pemrograman. Saya merupakan pribadi yang **mudah beradaptasi** dengan lingkungan baru, mampu **bekerja secara tim** maupun secara mandiri, serta dapat **mengatur waktu** dengan baik.</p>
-                    <p>Meskipun saya masih belajar untuk lebih percaya diri berbicara di depan umum, saya selalu berusaha untuk berkembang dan menjadikan setiap pengalaman sebagai peluang untuk belajar dan maju.</p>
+                    <p>Halo! Saya **Zia Kahila Dagna**, siswa SMK jurusan Pengembangan Perangkat Lunak dan GIM (PPLG) dengan *passion* kuat di bidang pengembangan web.</p>
+                    <p>Saya fokus membangun fondasi yang kokoh dalam teknologi *front-end* dan logika *back-end* sederhana. Saya dikenal sebagai individu yang:
+                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Cepat beradaptasi,
+                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Mampu bekerja secara tim maupun mandiri, dan
+                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Efisien dalam manajemen waktu.
+                    </p>
+                    <p>Saya siap belajar dan berkontribusi dalam lingkungan kerja yang dinamis.</p>
                 </div>
             </div>
         </div>
@@ -305,50 +481,35 @@
 
     <section id="pendidikan" class="js-fade-in">
         <div class="container">
-            <h2>Edukasi</h2>
+            <h2>Riwayat Pendidikan & Organisasi</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
+                        <span class="timeline-date"><i class="fas fa-school"></i> 2024 - Sekarang</span>
                         <h4>SMK Informatika Utama</h4>
                         <p>Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG)</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2021 - 2024</span>
-                        <h4>MTs Darur Roja</h4>
-                        <p>Lulusan Madrasah Tsanawiyah.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="organisasi" class="js-fade-in">
-        <div class="container">
-            <h2>Pengalaman Organisasi</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
-                        <h4>Anggota Karang Taruna (Katar)</h4>
-                        <p>Lingkungan RT 02/RW 05, Kel. Cinere, Kec. Cinere</p>
-                        <ul>
-                            <li>Berpartisipasi aktif dalam kegiatan sosial dan kepemudaan.</li>
-                            <li>Membantu pelaksanaan Maulid Nabi dan Isra Mi’raj.</li>
-                            <li>Menjadi panitia lomba 17 Agustus.</li>
+                        <hr style="margin: 10px 0; border: 0; border-top: 1px solid var(--light-blue);">
+                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--secondary-color); margin-bottom: 0;">Organisasi:</p>
+                        <ul style="margin-left: 20px; font-size: 0.9rem; margin-top: 5px;">
+                            <li>Anggota Aktif English Club (EC)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-item-content">
-                        <span class="timeline-date">2024 - Sekarang</span>
-                        <h4>Anggota English Club (EC)</h4>
-                        <p>SMK Informatika Utama</p>
-                        <ul>
-                            <li>Aktif mengikuti kegiatan TMI, penyampaian materi, dan Ice Breaking.</li>
-                            <li>Mengembangkan kemampuan berbicara dan kosakata melalui kegiatan Vocab Jar.</li>
+                        <span class="timeline-date"><i class="fas fa-mosque"></i> 2021 - 2024</span>
+                        <h4>MTs Darur Roja</h4>
+                        <p>Lulusan Madrasah Tsanawiyah.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                     <div class="timeline-item-content">
+                        <span class="timeline-date"><i class="fas fa-handshake"></i> 2024 - Sekarang</span>
+                        <h4>Anggota Karang Taruna (Katar)</h4>
+                        <p>RT 02/RW 05, Kel. Cinere, Kec. Cinere</p>
+                        <ul style="margin-left: 20px; font-size: 0.9rem; margin-top: 5px;">
+                            <li>Panitia aktif lomba 17 Agustus.</li>
+                            <li>Bantu pelaksanaan kegiatan keagamaan.</li>
                         </ul>
                     </div>
                 </div>
@@ -358,43 +519,58 @@
 
     <section id="portofolio" class="js-fade-in">
         <div class="container">
-            <h2>Proyek Website</h2>
+            <h2>Proyek Utama</h2>
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/4169E1/ffffff?text=E-Commerce+Static" alt="Screenshoot Toko Online Statis">
+                    <img src="https://via.placeholder.com/400x200/4169E1/ffffff?text=E-COMMERCE+STATIC" alt="Screenshoot Toko Online Statis">
                     <div class="portfolio-info">
-                        <h3>Toko Online Statis</h3>
-                        <p class="short-desc">Proyek dasar pembuatan toko online. Fokus utama adalah pada **struktur HTML** yang rapi dan **desain responsif** menggunakan CSS.</p>
-                        <span class="tech-stack">HTML, CSS</span>
+                        <h3>Toko Online Statis Dasar</h3>
+                        <p class="short-desc">Proyek awal untuk membuat katalog produk yang *responsive*. Fokus pada **tata letak HTML5** semantik dan desain menggunakan **Flexbox/Grid CSS**.</p>
+                        <div>
+                            <span class="tech-stack">HTML</span>
+                            <span class="tech-stack">CSS</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/002147/ADD8E6?text=CRUD+Laravel" alt="Screenshoot CRUD Penjualan Produk">
+                    <img src="https://via.placeholder.com/400x200/002147/D6E4FF?text=CRUD+LARAVEL" alt="Screenshoot CRUD Penjualan Produk">
                     <div class="portfolio-info">
-                        <h3>Website CRUD Penjualan Produk</h3>
-                        <p class="short-desc">Aplikasi web dinamis untuk mengelola inventaris (Create, Read, Update, Delete). Menunjukkan pemahaman **Konsep CRUD** dan penggunaan **Laravel**.</p>
-                        <span class="tech-stack">Laravel, PHP, MySQL, Bootstrap</span>
+                        <h3>Sistem CRUD Penjualan</h3>
+                        <p class="short-desc">Aplikasi web dinamis yang mengimplementasikan operasi **CRUD** (Create, Read, Update, Delete) untuk manajemen data produk menggunakan **Laravel**.</p>
+                        <div>
+                            <span class="tech-stack">Laravel</span>
+                            <span class="tech-stack">PHP</span>
+                            <span class="tech-stack">MySQL</span>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/4169E1/ffffff?text=Landing+Page+Profile" alt="Screenshoot Landing Page">
+                    <img src="https://via.placeholder.com/400x200/4169E1/ffffff?text=LANDING+PAGE+DESIGN" alt="Screenshoot Landing Page">
                     <div class="portfolio-info">
-                        <h3>Landing Page Profil Pribadi</h3>
-                        <p class="short-desc">Desain halaman muka satu halaman yang elegan dan *clean*. Menekankan penggunaan **CSS modern** dan animasi sederhana untuk UX yang baik.</p>
-                        <span class="tech-stack">HTML, CSS, JavaScript</span>
+                        <h3>Landing Page Profil Modern</h3>
+                        <p class="short-desc">Desain halaman muka satu halaman berfokus pada *User Experience (UX)*. Menekankan penggunaan **animasi CSS** dan *clean code*.</p>
+                        <div>
+                            <span class="tech-stack">HTML</span>
+                            <span class="tech-stack">CSS</span>
+                            <span class="tech-stack">JavaScript</span>
+                        </div>
                     </div>
                 </div>
                 
-                </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Zia Kahila Dagna | Portofolio.</p>
+            <p>&copy; 2025 Zia Kahila Dagna | Junior Web Developer.</p>
+            <div class="social-links" style="margin-top: 10px;">
+                <a href="#" style="color: var(--light-blue); margin: 0 10px;"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" style="color: var(--light-blue); margin: 0 10px;"><i class="fas fa-envelope"></i> Email</a>
+            </div>
         </div>
     </footer>
 
@@ -406,7 +582,7 @@
 
             const appearOptions = {
                 threshold: 0.2, 
-                rootMargin: "0px 0px -50px 0px" 
+                rootMargin: "0px 0px -100px 0px" // Mulai fade in lebih awal
             };
 
             const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
@@ -433,8 +609,7 @@
                 skillLevels.forEach(level => {
                     const skillPercentage = level.getAttribute('data-level') + '%';
                     level.style.width = skillPercentage;
-                    // Tampilkan persentase di dalam bar setelah animasi dimulai
-                    level.textContent = skillPercentage; 
+                    // Persentase hanya di label atas, bukan di dalam bar
                 });
             }
             
@@ -448,8 +623,7 @@
                     
                     if (targetElement) {
                         const headerHeight = document.querySelector('header').offsetHeight; 
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
                         window.scrollTo({
                             top: offsetPosition,
@@ -463,7 +637,7 @@
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             portfolioItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    alert('Anda mengklik proyek: ' + item.querySelector('h3').innerText + '. Mohon maaf, link demo belum tersedia. Silakan hubungi saya untuk detail lebih lanjut.');
+                    alert('Anda mengklik proyek: ' + item.querySelector('h3').innerText + '. Link demo/repository sedang disiapkan! Mohon ditunggu.');
                 });
             });
 
