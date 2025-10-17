@@ -9,7 +9,7 @@
     
     <style>
         /* ====================
-           CSS STYLES - TEMA ULTRA-MODERN BIRU
+           CSS STYLES - TEMA ULTRA-MODERN BIRU (DIPERKUAT KONSISTENSI & KERAPIHAN)
            ==================== */
         :root {
             --primary-color: #002147;      /* Biru Tua (Navy) */
@@ -20,7 +20,7 @@
             --text-color: #1a1a1a;         /* Teks Gelap */
             --font-main: 'Poppins', sans-serif;
             --font-heading: 'Montserrat', sans-serif;
-            --shadow-light: 0 4px 15px rgba(0, 33, 71, 0.1); /* Shadow halus */
+            --shadow-light: 0 4px 15px rgba(0, 33, 71, 0.1); 
         }
 
         * {
@@ -44,7 +44,7 @@
         }
 
         /* --------------------------
-           1. HEADER & NAVIGATION
+           1. HEADER & HERO
            -------------------------- */
         header {
             background: var(--primary-color);
@@ -55,12 +55,6 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.4);
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
         nav .logo {
             font-family: var(--font-heading);
             font-size: 1.8rem;
@@ -68,62 +62,23 @@
             color: var(--light-blue);
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
         nav ul li a {
             color: var(--light-blue);
-            text-decoration: none;
             padding: 0.5rem 0.8rem;
-            display: block;
             font-weight: 600;
-            transition: color 0.3s;
         }
 
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* --------------------------
-           2. HERO SECTION
-           -------------------------- */
         #hero {
             background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a60 100%);
-            color: var(--light-color);
-            padding: 12rem 0 10rem; /* Lebih besar */
-            text-align: center;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); /* Efek miring di bawah */
+            padding: 12rem 0 10rem;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
         }
 
         #hero h1 {
             font-family: var(--font-heading);
             font-size: 4.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--light-blue);
             font-weight: 700;
             letter-spacing: 2px;
-        }
-
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: 3rem;
-            color: var(--secondary-color); 
-            font-weight: 400;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: white;
-            padding: 16px 45px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            text-transform: uppercase;
-            box-shadow: 0 8px 20px rgba(65, 105, 225, 0.4);
-            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         .cta-button:hover {
@@ -133,7 +88,7 @@
         }
 
         /* --------------------------
-           3. MAIN CONTENT STYLE
+           2. MAIN CONTENT & HEADINGS
            -------------------------- */
         section {
             padding: 100px 0;
@@ -156,8 +111,6 @@
         }
 
         h2::after {
-            content: '';
-            display: block;
             width: 90px;
             height: 5px; 
             background: var(--secondary-color);
@@ -166,13 +119,13 @@
         }
         
         /* --------------------------
-           4. PROFIL (Asimetris)
+           3. PROFIL (Dibuat Rapi)
            -------------------------- */
         #profil .profile-wrapper {
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            align-items: center;
+            align-items: center; /* Memastikan keselarasan vertikal */
             gap: 60px;
             text-align: left;
             padding: 30px 40px;
@@ -181,16 +134,19 @@
             box-shadow: var(--shadow-light); 
         }
         
-        #profil h2 { text-align: left; margin-bottom: 3rem; }
-        #profil h2::after { margin-left: 0; }
+        #profil h2 { 
+            text-align: center; /* Heading profil dibuat center lagi agar konsisten */
+            margin-bottom: 3rem;
+        }
+        #profil h2::after { margin: 10px auto 0; } /* Garis di bawah heading center */
 
         #profil .profile-photo {
             flex-shrink: 0;
-            width: 220px; /* Ukuran foto diperbesar */
+            width: 220px;
             height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid var(--secondary-color); /* Border Biru Royal yang tebal */
+            border: 8px solid var(--secondary-color);
             box-shadow: 0 5px 25px rgba(0,0,0,0.2);
         }
 
@@ -202,25 +158,24 @@
             font-size: 1.05rem;
             margin-bottom: 18px;
             font-weight: 300;
+            text-align: justify; /* Rata kiri-kanan untuk kerapian teks */
         }
-
+        
         /* --------------------------
-           5. KEAHLIAN (Skill Bar Baru)
+           4. KEAHLIAN (Skill Bar Lebih Rapi)
            -------------------------- */
-        #keahlian { text-align: center; }
-
         #keahlian .skill-chart {
-            max-width: 900px;
+            max-width: 800px; /* Dibatasi agar fokus */
             margin: 0 auto;
             text-align: left;
         }
 
         .skill-bar-container {
-            margin-bottom: 30px;
+            margin-bottom: 25px; /* Spasi antar bar konsisten */
             background: var(--light-color);
-            padding: 15px 25px;
+            padding: 15px 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Shadow sangat halus */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
         }
 
         .skill-label {
@@ -230,166 +185,140 @@
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 8px;
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Ukuran label disesuaikan */
         }
         
         .skill-bar {
-            background-color: var(--light-blue); /* Background Biru Muda */
+            background-color: var(--light-blue);
             border-radius: 5px;
-            height: 15px; /* Tinggi bar dikurangi agar terlihat elegan */
+            height: 12px; /* Dibuat lebih tipis agar elegan */
             overflow: hidden;
         }
 
         .skill-level {
             height: 100%;
-            background: linear-gradient(to right, var(--secondary-color), #2049e6); /* Gradien Biru Royal */
+            background: linear-gradient(to right, var(--secondary-color), #2049e6);
             width: 0;
             transition: width 1.5s ease-out;
-            display: flex;
-            align-items: center;
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: transparent; /* Persentase hanya di label atas */
+            border-radius: 5px; /* Pastikan sudut skill level juga melengkung */
         }
         
         /* --------------------------
-           6. PENDIDIKAN & ORGANISASI (Timeline Lebih Tebal)
+           5. TIMELINE (Lebih Simetris)
            -------------------------- */
         .timeline {
             max-width: 900px;
+            margin: 0 auto;
+            position: relative;
         }
         
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        /* Penyelarasan ulang titik tengah */
         .timeline::before {
-            width: 6px; /* Garis timeline lebih tebal */
-            background-color: var(--secondary-color);
             left: 50%;
             margin-left: -3px;
         }
 
-        .timeline-item-content {
-            border-left: 8px solid var(--light-blue); /* Border Biru Muda */
-            border-radius: 10px;
-            box-shadow: var(--shadow-light);
-            transition: all 0.4s;
+        .timeline-item:nth-child(odd) {
+            left: 0; /* Semua item Ganjil di kiri */
+            padding-right: 60px; /* Menjaga jarak ke garis tengah */
+            text-align: right;
         }
-        
-        .timeline-item-content:hover {
-            transform: scale(1.03);
-            border-left: 8px solid var(--secondary-color);
-        }
-
-        .timeline-item-content h4 {
-            color: var(--primary-color);
-            font-weight: 700;
+        .timeline-item:nth-child(even) {
+            left: 50%; /* Semua item Genap di kanan */
+            padding-left: 60px; /* Menjaga jarak ke garis tengah */
+            text-align: left;
         }
 
-        .timeline-item::after {
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--light-color); 
-            border: 6px solid var(--primary-color); /* Lingkaran Biru Tua */
+        /* Penempatan lingkaran (titik) */
+        .timeline-item:nth-child(odd)::after {
+            right: -10px; /* Lingkaran di kanan (dekat garis tengah) */
+            left: auto;
         }
-
         .timeline-item:nth-child(even)::after {
-            left: -10px;
+            left: -10px; /* Lingkaran di kiri (dekat garis tengah) */
+            right: auto;
         }
         
-        .timeline-date {
-            color: var(--secondary-color);
-            font-size: 1rem;
+        /* Konten timeline */
+        .timeline-item-content {
+            padding: 20px; /* Padding lebih konsisten */
+        }
+        
+        .timeline-item-content ul {
+             /* Perapihan list di dalam timeline */
+            padding-left: 18px; 
+            margin-top: 5px; 
+            list-style: disc;
         }
         
         /* --------------------------
-           7. PORTOFOLIO (Card Grid Lebih Menarik)
+           6. PORTOFOLIO (Tech Stack Rapi)
            -------------------------- */
         #portofolio .portfolio-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            gap: 30px; /* Spasi sedikit dikurangi agar rapi */
             max-width: 1000px; 
             margin: 50px auto 0;
         }
 
         .portfolio-item {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px; /* Sudut lebih lembut */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Shadow lebih terstruktur */
             overflow: hidden;
             border: 1px solid var(--light-blue);
         }
 
         .portfolio-item:hover {
-            transform: translateY(-10px); 
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .portfolio-item img {
-            height: 200px;
-            border-bottom: 5px solid var(--secondary-color); 
-        }
-
-        .portfolio-info {
-            padding: 25px;
-            background: var(--light-color);
+            transform: translateY(-8px); 
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
         }
 
         .portfolio-info h3 {
-            color: var(--primary-color);
-            font-size: 1.4rem;
-            margin-bottom: 8px;
+            margin-bottom: 4px; /* Judul lebih dekat ke deskripsi */
         }
 
         .portfolio-info .short-desc {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 15px;
+            font-size: 0.95rem; /* Ukuran font lebih ringkas */
+            margin-bottom: 12px;
         }
 
         .tech-stack {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            background: var(--light-blue);
-            padding: 6px 12px;
-            border-radius: 20px;
-            margin-right: 8px;
-            display: inline-block;
+            font-size: 0.8rem; /* Ukuran tag lebih kecil */
+            padding: 4px 10px; /* Padding tag disesuaikan */
+            margin-right: 5px; /* Jarak antar tag disesuaikan */
+            margin-top: 5px;
         }
         
         /* --------------------------
-           8. FOOTER
-           -------------------------- */
-        footer {
-            background: var(--primary-color);
-            color: var(--light-blue);
-            padding: 2rem 0;
-            font-size: 1rem;
-        }
-
-
-        /* --------------------------
-           9. RESPONSIVENESS
+           7. RESPONSIVENESS
            -------------------------- */
         @media (max-width: 900px) {
-            #hero h1 { font-size: 3rem; }
-            h2 { font-size: 2.5rem; margin-bottom: 3rem; }
-            
-            #profil .profile-wrapper {
-                flex-direction: column;
-                text-align: center;
+            /* Perapihan Profil di Mobile */
+            #profil .profile-photo {
+                width: 150px;
+                height: 150px;
             }
-            #profil h2 { text-align: center; margin-bottom: 3rem; }
-            #profil h2::after { margin: 10px auto 0; }
+            #profil .profile-content p {
+                 text-align: left; /* Rata kiri di mobile lebih mudah dibaca */
+            }
             
+            /* Perapihan Timeline di Mobile */
+            .timeline::before { left: 20px; }
             .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
-            .timeline-item:nth-child(even) { left: 0; }
-            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
-            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
-            
-            #portofolio .portfolio-grid {
-                grid-template-columns: 1fr;
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { 
+                left: 0; 
+                text-align: left; 
+                padding-left: 60px; 
+                padding-right: 20px; 
             }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd)::after { left: 10px; right: auto; }
         }
     </style>
 </head>
@@ -402,9 +331,9 @@
                 <ul>
                     <li><a href="#profil">Profil</a></li>
                     <li><a href="#keahlian">Keahlian</a></li>
-                    <li><a href="#pendidikan">Edukasi</a></li>
+                    <li><a href="#pendidikan">Riwayat</a></li>
                     <li><a href="#portofolio">Karya</a></li>
-                    </ul>
+                </ul>
             </nav>
         </div>
     </header>
@@ -582,7 +511,7 @@
 
             const appearOptions = {
                 threshold: 0.2, 
-                rootMargin: "0px 0px -100px 0px" // Mulai fade in lebih awal
+                rootMargin: "0px 0px -100px 0px" 
             };
 
             const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
@@ -609,7 +538,6 @@
                 skillLevels.forEach(level => {
                     const skillPercentage = level.getAttribute('data-level') + '%';
                     level.style.width = skillPercentage;
-                    // Persentase hanya di label atas, bukan di dalam bar
                 });
             }
             
