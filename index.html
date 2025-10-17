@@ -1,576 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Profesional | Zia Kahila Dagna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <style>
-        /* ====================
-           CSS STYLES - TEMA ULTRA-MODERN BIRU (DIPERKUAT KONSISTENSI & KERAPIHAN)
-           ==================== */
-        :root {
-            --primary-color: #002147;      /* Biru Tua (Navy) */
-            --secondary-color: #4169E1;    /* Biru Royal (Aksen Utama) */
-            --light-blue: #D6E4FF;         /* Biru Sangat Muda (Background Sekunder) */
-            --accent-bg: #f0f8ff;          /* AliceBlue */
-            --light-color: #ffffff;        /* Putih */
-            --text-color: #1a1a1a;         /* Teks Gelap */
-            --font-main: 'Poppins', sans-serif;
-            --font-heading: 'Montserrat', sans-serif;
-            --shadow-light: 0 4px 15px rgba(0, 33, 71, 0.1); 
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio — Zia Kahila Dagna</title>
+  <meta name="description" content="Portfolio kreatif interaktif — profil, pendidikan, pengalaman organisasi, dan portofolio pembuatan website." />
+  <style>
+    :root{
+      --bg:#0f1724;--card:#0b1220;--muted:#9aa7bf;--accent:#7c3aed;--glass:rgba(255,255,255,0.04);
+      --glass-strong:rgba(255,255,255,0.06);--radius:14px;--maxw:1100px;
+      --mono: 'Segoe UI Mono', monospace;--ui:'Inter',system-ui,Segoe UI,Roboto,Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:32px; background:linear-gradient(180deg,#081025 0%, #071123 60%); color:#e6eef8; font-family:var(--ui);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    .wrap{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:320px 1fr;gap:28px}
+    header.card{grid-column:1/3; background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:20px;border-radius:18px;display:flex;align-items:center;gap:16px}
+    .avatar{width:96px;height:96px;border-radius:14px;flex:0 0 96px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--mono);}
+    .hdr h1{margin:0;font-size:20px}
+    .hdr p{margin:6px 0 0;color:var(--muted);font-size:13px}
 
-        body {
-            font-family: var(--font-main);
-            line-height: 1.6;
-            background-color: var(--light-color);
-            color: var(--text-color);
-            scroll-behavior: smooth;
-        }
+    nav.side{background:var(--card);padding:14px;border-radius:12px;height:fit-content}
+    nav.side ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+    nav.side a{display:block;padding:10px;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav.side a.active, nav.side a:hover{background:var(--glass);color:var(--accent)}
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 0 20px;
-        }
+    main{min-height:60vh}
+    section.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:18px;border-radius:12px;margin-bottom:18px}
+    h2{margin:0 0 12px}
+    .bio p{color:var(--muted);line-height:1.5}
 
-        /* --------------------------
-           1. HEADER & HERO
-           -------------------------- */
-        header {
-            background: var(--primary-color);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-        }
+    .list{display:grid;gap:12px}
+    .edu-item, .org-item{background:var(--glass-strong);padding:12px;border-radius:10px}
+    .meta{color:var(--muted);font-size:13px}
 
-        nav .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--light-blue);
-        }
+    /* portfolio grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+    .proj{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;cursor:pointer;transition:transform .18s}
+    .proj:hover{transform:translateY(-6px)}
+    .thumb{height:130px;border-radius:10px;overflow:hidden;background:#081426;display:flex;align-items:center;justify-content:center}
+    .proj h3{margin:10px 0 6px;font-size:15px}
+    .tech{display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
 
-        nav ul li a {
-            color: var(--light-blue);
-            padding: 0.5rem 0.8rem;
-            font-weight: 600;
-        }
+    /* modal */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);padding:24px}
+    .modal.open{display:flex}
+    .modal-card{width:min(860px,96%);background:linear-gradient(180deg,#071022,#0b1622);border-radius:16px;padding:18px}
+    .modal-grid{display:grid;grid-template-columns:1fr 320px;gap:12px}
+    .modal .thumb{height:200px}
+    .close{background:transparent;border:0;color:var(--muted);font-weight:700;cursor:pointer}
 
-        #hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3a60 100%);
-            padding: 12rem 0 10rem;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-        }
+    /* footer */
+    footer{grid-column:1/3;text-align:center;color:var(--muted);margin-top:6px;font-size:13px}
 
-        #hero h1 {
-            font-family: var(--font-heading);
-            font-size: 4.5rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
+    /* responsive */
+    @media (max-width:900px){.wrap{grid-template-columns:1fr; padding:12px} nav.side{order:2} header.card{flex-direction:row;gap:12px} .modal-grid{grid-template-columns:1fr}}
 
-        .cta-button:hover {
-            background-color: #315cd8;
-            transform: translateY(-5px); 
-            box-shadow: 0 12px 30px rgba(65, 105, 225, 0.6);
-        }
-
-        /* --------------------------
-           2. MAIN CONTENT & HEADINGS
-           -------------------------- */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-
-        section:nth-child(odd) {
-            background-color: var(--accent-bg); 
-        }
-
-        h2 {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            width: 90px;
-            height: 5px; 
-            background: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-        
-        /* --------------------------
-           3. PROFIL (Dibuat Rapi)
-           -------------------------- */
-        #profil .profile-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center; /* Memastikan keselarasan vertikal */
-            gap: 60px;
-            text-align: left;
-            padding: 30px 40px;
-            background: var(--light-color);
-            border-radius: 15px;
-            box-shadow: var(--shadow-light); 
-        }
-        
-        #profil h2 { 
-            text-align: center; /* Heading profil dibuat center lagi agar konsisten */
-            margin-bottom: 3rem;
-        }
-        #profil h2::after { margin: 10px auto 0; } /* Garis di bawah heading center */
-
-        #profil .profile-photo {
-            flex-shrink: 0;
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid var(--secondary-color);
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-        }
-
-        #profil .profile-content {
-            flex-grow: 1;
-        }
-        
-        #profil .profile-content p {
-            font-size: 1.05rem;
-            margin-bottom: 18px;
-            font-weight: 300;
-            text-align: justify; /* Rata kiri-kanan untuk kerapian teks */
-        }
-        
-        /* --------------------------
-           4. KEAHLIAN (Skill Bar Lebih Rapi)
-           -------------------------- */
-        #keahlian .skill-chart {
-            max-width: 800px; /* Dibatasi agar fokus */
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .skill-bar-container {
-            margin-bottom: 25px; /* Spasi antar bar konsisten */
-            background: var(--light-color);
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
-        }
-
-        .skill-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-            font-size: 1.05rem; /* Ukuran label disesuaikan */
-        }
-        
-        .skill-bar {
-            background-color: var(--light-blue);
-            border-radius: 5px;
-            height: 12px; /* Dibuat lebih tipis agar elegan */
-            overflow: hidden;
-        }
-
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(to right, var(--secondary-color), #2049e6);
-            width: 0;
-            transition: width 1.5s ease-out;
-            border-radius: 5px; /* Pastikan sudut skill level juga melengkung */
-        }
-        
-        /* --------------------------
-           5. TIMELINE (Lebih Simetris)
-           -------------------------- */
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-
-        /* Penyelarasan ulang titik tengah */
-        .timeline::before {
-            left: 50%;
-            margin-left: -3px;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0; /* Semua item Ganjil di kiri */
-            padding-right: 60px; /* Menjaga jarak ke garis tengah */
-            text-align: right;
-        }
-        .timeline-item:nth-child(even) {
-            left: 50%; /* Semua item Genap di kanan */
-            padding-left: 60px; /* Menjaga jarak ke garis tengah */
-            text-align: left;
-        }
-
-        /* Penempatan lingkaran (titik) */
-        .timeline-item:nth-child(odd)::after {
-            right: -10px; /* Lingkaran di kanan (dekat garis tengah) */
-            left: auto;
-        }
-        .timeline-item:nth-child(even)::after {
-            left: -10px; /* Lingkaran di kiri (dekat garis tengah) */
-            right: auto;
-        }
-        
-        /* Konten timeline */
-        .timeline-item-content {
-            padding: 20px; /* Padding lebih konsisten */
-        }
-        
-        .timeline-item-content ul {
-             /* Perapihan list di dalam timeline */
-            padding-left: 18px; 
-            margin-top: 5px; 
-            list-style: disc;
-        }
-        
-        /* --------------------------
-           6. PORTOFOLIO (Tech Stack Rapi)
-           -------------------------- */
-        #portofolio .portfolio-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px; /* Spasi sedikit dikurangi agar rapi */
-            max-width: 1000px; 
-            margin: 50px auto 0;
-        }
-
-        .portfolio-item {
-            border-radius: 12px; /* Sudut lebih lembut */
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Shadow lebih terstruktur */
-            overflow: hidden;
-            border: 1px solid var(--light-blue);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-        }
-
-        .portfolio-info h3 {
-            margin-bottom: 4px; /* Judul lebih dekat ke deskripsi */
-        }
-
-        .portfolio-info .short-desc {
-            font-size: 0.95rem; /* Ukuran font lebih ringkas */
-            margin-bottom: 12px;
-        }
-
-        .tech-stack {
-            font-size: 0.8rem; /* Ukuran tag lebih kecil */
-            padding: 4px 10px; /* Padding tag disesuaikan */
-            margin-right: 5px; /* Jarak antar tag disesuaikan */
-            margin-top: 5px;
-        }
-        
-        /* --------------------------
-           7. RESPONSIVENESS
-           -------------------------- */
-        @media (max-width: 900px) {
-            /* Perapihan Profil di Mobile */
-            #profil .profile-photo {
-                width: 150px;
-                height: 150px;
-            }
-            #profil .profile-content p {
-                 text-align: left; /* Rata kiri di mobile lebih mudah dibaca */
-            }
-            
-            /* Perapihan Timeline di Mobile */
-            .timeline::before { left: 20px; }
-            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
-            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { 
-                left: 0; 
-                text-align: left; 
-                padding-left: 60px; 
-                padding-right: 20px; 
-            }
-            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
-            .timeline-item:nth-child(odd)::after { left: 10px; right: auto; }
-        }
-    </style>
+    /* small helper */
+    .controls{display:flex;gap:8px;align-items:center}
+    .btn{padding:8px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent),#06b6d4);color:white;font-weight:700;cursor:pointer}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+  </style>
 </head>
 <body>
-
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">ZKD.</div>
-                <ul>
-                    <li><a href="#profil">Profil</a></li>
-                    <li><a href="#keahlian">Keahlian</a></li>
-                    <li><a href="#pendidikan">Riwayat</a></li>
-                    <li><a href="#portofolio">Karya</a></li>
-                </ul>
-            </nav>
+  <div class="wrap">
+    <header class="card" role="banner">
+      <div class="avatar">ZK</div>
+      <div class="hdr">
+        <h1>Zia Kahila Dagna — Web Developer</h1>
+        <p>SMK Rekayasa Perangkat Lunak · Pembuat website interaktif · Pengalaman organisasi: Karang Taruna, English Club</p>
+        <div style="margin-top:10px" class="controls">
+          <button class="btn" onclick="downloadResume()" title="Download resume">Download CV</button>
+          <button class="ghost" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Lihat Portofolio</button>
         </div>
+      </div>
     </header>
 
-    <section id="hero" class="js-fade-in">
-        <div class="container">
-            <h1>Zia Kahila Dagna</h1>
-            <p>JUNIOR WEB DEVELOPER & DESAINER UI/UX</p>
-            <a href="#portofolio" class="cta-button">Jelajahi Proyek Saya <i class="fas fa-arrow-right"></i></a>
+    <nav class="side" aria-label="Navigasi halaman">
+      <ul>
+        <li><a href="#profile" class="active">Profil</a></li>
+        <li><a href="#education">Pendidikan</a></li>
+        <li><a href="#org">Pengalaman Organisasi</a></li>
+        <li><a href="#projects">Portofolio</a></li>
+        <li><a href="#contact">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="profile" class="card">
+        <h2>Profil</h2>
+        <div class="bio">
+          <p>Halo! Saya Zia, seorang pelajar SMK jurusan Rekayasa Perangkat Lunak yang antusias membangun website interaktif. Saya fokus pada antarmuka pengguna, animasi ringan, dan integrasi layanan sederhana. Saya senang bereksperimen dengan desain dan meningkatkan pengalaman pengguna.
+          </p>
         </div>
-    </section>
-    
-    <section id="profil" class="js-fade-in">
-        <div class="container">
-            <h2>Tentang Saya</h2>
-            <div class="profile-wrapper">
-                <img src="https://via.placeholder.com/220/002147/D6E4FF?text=Foto+Profil+Zia" alt="Foto Profil Zia Kahila Dagna" class="profile-photo">
-                <div class="profile-content">
-                    <p>Halo! Saya **Zia Kahila Dagna**, siswa SMK jurusan Pengembangan Perangkat Lunak dan GIM (PPLG) dengan *passion* kuat di bidang pengembangan web.</p>
-                    <p>Saya fokus membangun fondasi yang kokoh dalam teknologi *front-end* dan logika *back-end* sederhana. Saya dikenal sebagai individu yang:
-                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Cepat beradaptasi,
-                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Mampu bekerja secara tim maupun mandiri, dan
-                        <i class="fas fa-check-circle" style="color: var(--secondary-color);"></i> Efisien dalam manajemen waktu.
-                    </p>
-                    <p>Saya siap belajar dan berkontribusi dalam lingkungan kerja yang dinamis.</p>
-                </div>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Pendidikan</h2>
+        <div class="list">
+          <div class="edu-item">
+            <strong>SMK Informatika Utama — Rekayasa Perangkat Lunak</strong>
+            <div class="meta">2022 — sekarang · Jurusan: RPL</div>
+            <p class="meta">Kursus: HTML, CSS, JavaScript, dasar PHP, Git. Proyek sekolah: Aplikasi pendaftaran online.</p>
+          </div>
+          <div class="edu-item">
+            <strong>MTs Darur Roja</strong>
+            <div class="meta">2016 — 2019</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="org" class="card">
+        <h2>Pengalaman Organisasi</h2>
+        <div class="list">
+          <div class="org-item">
+            <strong>Karang Taruna — Anggota</strong>
+            <div class="meta">2021 — sekarang</div>
+            <p class="meta">Terlibat dalam kegiatan sosial dan pengelolaan acara komunitas.</p>
+          </div>
+          <div class="org-item">
+            <strong>English Club — Anggota</strong>
+            <div class="meta">2019 — 2021</div>
+            <p class="meta">Berlatih presentasi dan percakapan bahasa Inggris.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="card">
+        <h2>Portofolio — Proyek Pembuatan Website</h2>
+        <p class="meta">Klik proyek untuk melihat detail. Dua data dummy disediakan sebagai contoh (tersedia screenshot, nama aplikasi, dan tech stack).</p>
+
+        <div class="grid" id="projectsGrid">
+          <!-- Project 1 -->
+          <article class="proj" tabindex="0" role="button" onclick="openModal(0)" onkeypress="if(event.key==='Enter')openModal(0)">
+            <div class="thumb">
+              <!-- inline SVG screenshot (data URL) -->
+              <img alt="Screenshot Project A" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%237c3aed'/><stop offset='1' stop-color='%2306b6d4'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g)'/><text x='20' y='60' font-size='30' font-family='Segoe UI' fill='white'>MyShop — Dashboard</text><rect x='20' y='90' width='520' height='30' rx='6' fill='rgba(255,255,255,0.12)'/><rect x='20' y='130' width='260' height='110' rx='8' fill='rgba(255,255,255,0.06)'/></svg>" style="width:100%;height:100%;object-fit:cover"/>
             </div>
-        </div>
-    </section>
+            <h3>MyShop Dashboard</h3>
+            <div class="tech"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div>
+          </article>
 
-    <section id="keahlian" class="js-fade-in">
-        <div class="container">
-            <h2>Keahlian Teknis & Non-Teknis</h2>
-            <div class="skill-chart">
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Konsep CRUD & Laravel (Dasar)</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>60%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="60"></div></div>
-                </div>
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Bekerja Sama Tim Maupun Mandiri</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Cepat Beradaptasi dengan Lingkungan Baru</span><span>70%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
-                </div>
-
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Manajemen Waktu yang Baik</span><span>65%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="65"></div></div>
-                </div>
-
+          <!-- Project 2 -->
+          <article class="proj" tabindex="0" role="button" onclick="openModal(1)" onkeypress="if(event.key==='Enter')openModal(1)">
+            <div class="thumb">
+              <img alt="Screenshot Project B" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='360'><defs><linearGradient id='g2' x1='0' x2='1'><stop offset='0' stop-color='%23096a4f'/><stop offset='1' stop-color='%237c3aed'/></linearGradient></defs><rect width='100%' height='100%' fill='url(%23g2)'/><text x='20' y='60' font-size='30' font-family='Segoe UI' fill='white'>EduClass — Landing</text><rect x='20' y='90' width='520' height='30' rx='6' fill='rgba(255,255,255,0.12)'/><circle cx='80' cy='170' r='36' fill='rgba(255,255,255,0.06)'/></svg>" style="width:100%;height:100%;object-fit:cover"/>
             </div>
+            <h3>EduClass Landing</h3>
+            <div class="tech"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Vanilla JS</span><span class="tag">AOS</span></div>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <section id="pendidikan" class="js-fade-in">
-        <div class="container">
-            <h2>Riwayat Pendidikan & Organisasi</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date"><i class="fas fa-school"></i> 2024 - Sekarang</span>
-                        <h4>SMK Informatika Utama</h4>
-                        <p>Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG)</p>
-                        <hr style="margin: 10px 0; border: 0; border-top: 1px solid var(--light-blue);">
-                        <p style="font-size: 0.9rem; font-weight: 600; color: var(--secondary-color); margin-bottom: 0;">Organisasi:</p>
-                        <ul style="margin-left: 20px; font-size: 0.9rem; margin-top: 5px;">
-                            <li>Anggota Aktif English Club (EC)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-item-content">
-                        <span class="timeline-date"><i class="fas fa-mosque"></i> 2021 - 2024</span>
-                        <h4>MTs Darur Roja</h4>
-                        <p>Lulusan Madrasah Tsanawiyah.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                     <div class="timeline-item-content">
-                        <span class="timeline-date"><i class="fas fa-handshake"></i> 2024 - Sekarang</span>
-                        <h4>Anggota Karang Taruna (Katar)</h4>
-                        <p>RT 02/RW 05, Kel. Cinere, Kec. Cinere</p>
-                        <ul style="margin-left: 20px; font-size: 0.9rem; margin-top: 5px;">
-                            <li>Panitia aktif lomba 17 Agustus.</li>
-                            <li>Bantu pelaksanaan kegiatan keagamaan.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <section id="contact" class="card">
+        <h2>Kontak</h2>
+        <p class="meta">Email: zia.kahila@example.com · GitHub: github.com/ziaaaa</p>
+        <p class="meta">Tambahkan link ke repo atau file yang ingin ditampilkan pada portofolio.</p>
+      </section>
+
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-hidden="true">
+      <div class="modal-card" role="document">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong id="modalTitle">Judul Proyek</strong>
+          <button class="close" onclick="closeModal()">✕</button>
         </div>
-    </section>
-
-    <section id="portofolio" class="js-fade-in">
-        <div class="container">
-            <h2>Proyek Utama</h2>
-            <div class="portfolio-grid">
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x200/4169E1/ffffff?text=E-COMMERCE+STATIC" alt="Screenshoot Toko Online Statis">
-                    <div class="portfolio-info">
-                        <h3>Toko Online Statis Dasar</h3>
-                        <p class="short-desc">Proyek awal untuk membuat katalog produk yang *responsive*. Fokus pada **tata letak HTML5** semantik dan desain menggunakan **Flexbox/Grid CSS**.</p>
-                        <div>
-                            <span class="tech-stack">HTML</span>
-                            <span class="tech-stack">CSS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x200/002147/D6E4FF?text=CRUD+LARAVEL" alt="Screenshoot CRUD Penjualan Produk">
-                    <div class="portfolio-info">
-                        <h3>Sistem CRUD Penjualan</h3>
-                        <p class="short-desc">Aplikasi web dinamis yang mengimplementasikan operasi **CRUD** (Create, Read, Update, Delete) untuk manajemen data produk menggunakan **Laravel**.</p>
-                        <div>
-                            <span class="tech-stack">Laravel</span>
-                            <span class="tech-stack">PHP</span>
-                            <span class="tech-stack">MySQL</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x200/4169E1/ffffff?text=LANDING+PAGE+DESIGN" alt="Screenshoot Landing Page">
-                    <div class="portfolio-info">
-                        <h3>Landing Page Profil Modern</h3>
-                        <p class="short-desc">Desain halaman muka satu halaman berfokus pada *User Experience (UX)*. Menekankan penggunaan **animasi CSS** dan *clean code*.</p>
-                        <div>
-                            <span class="tech-stack">HTML</span>
-                            <span class="tech-stack">CSS</span>
-                            <span class="tech-stack">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+        <div class="modal-grid">
+          <div>
+            <div class="thumb" id="modalImg"></div>
+            <p id="modalDesc" style="color:var(--muted);margin-top:12px"></p>
+          </div>
+          <aside style="background:var(--glass);padding:12px;border-radius:10px">
+            <h4>Detail</h4>
+            <p class="meta" id="modalStack"></p>
+            <p class="meta"><strong>Peran:</strong> Frontend Developer (Desain & Implementasi)</p>
+            <div style="margin-top:12px"><button class="btn" id="viewBtn" onclick="viewLive()">Lihat Live</button></div>
+          </aside>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Zia Kahila Dagna | Junior Web Developer.</p>
-            <div class="social-links" style="margin-top: 10px;">
-                <a href="#" style="color: var(--light-blue); margin: 0 10px;"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#" style="color: var(--light-blue); margin: 0 10px;"><i class="fas fa-envelope"></i> Email</a>
-            </div>
-        </div>
-    </footer>
+    <footer>© <span id="year"></span> Zia Kahila Dagna — Portofolio interaktif</footer>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-            // 1. Interaksi Fade-In on Scroll (Untuk semua section)
-            const faders = document.querySelectorAll('.js-fade-in');
+  <script>
+    // --- Data dummy untuk portofolio ---
+    const projects = [
+      {
+        title: 'MyShop Dashboard',
+        desc: 'Dashboard admin untuk toko online sederhana. Menampilkan ringkasan pesanan, produk, dan statistik penjualan bulanan.',
+        stack: ['HTML','CSS','JavaScript','Bootstrap'],
+        img: document.querySelectorAll('.proj img')[0].src,
+        live: '#'
+      },
+      {
+        title: 'EduClass Landing',
+        desc: 'Landing page interaktif untuk layanan kelas online dengan animasi masuk dan sekilas fitur.',
+        stack: ['HTML','CSS','Vanilla JS','AOS'],
+        img: document.querySelectorAll('.proj img')[1].src,
+        live: '#'
+      }
+    ];
 
-            const appearOptions = {
-                threshold: 0.2, 
-                rootMargin: "0px 0px -100px 0px" 
-            };
+    // modal handlers
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImg = document.getElementById('modalImg');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalStack = document.getElementById('modalStack');
+    let current = 0;
 
-            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        return;
-                    }
-                    entry.target.classList.add('is-visible');
-                    // Tambahkan animasi skill bar setelah section terlihat
-                    if (entry.target.id === 'keahlian') {
-                        animateSkillBars();
-                    }
-                    appearOnScroll.unobserve(entry.target);
-                });
-            }, appearOptions);
+    function openModal(i){
+      current = i; const p = projects[i];
+      modalTitle.textContent = p.title;
+      modalImg.innerHTML = `<img src="${p.img}" alt="${p.title} screenshot" style="width:100%;height:100%;object-fit:cover;border-radius:8px">`;
+      modalDesc.textContent = p.desc;
+      modalStack.innerHTML = p.stack.map(s=>`<span class='tag' style='margin-right:6px'>${s}</span>`).join('');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+    }
+    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.style.overflow='auto'; }
+    window.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
 
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
+    function viewLive(){ const p = projects[current]; if(p.live && p.live!=='#') window.open(p.live,'_blank'); else alert('Link live belum tersedia — tambahkan URL pada data proyek.'); }
 
-            // 2. Animasi Diagram Batang Keahlian
-            function animateSkillBars() {
-                const skillLevels = document.querySelectorAll('.skill-level');
-                skillLevels.forEach(level => {
-                    const skillPercentage = level.getAttribute('data-level') + '%';
-                    level.style.width = skillPercentage;
-                });
-            }
-            
-            // 3. Interaksi Scroll Halus (Smooth Scrolling)
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+    // Download CV (simple text file generated)
+    function downloadResume(){
+      const text = `Zia Kahila Dagna\nWeb Developer\nEmail: zia.kahila@example.com\nGitHub: github.com/ziaaaa\n`;
+      const blob = new Blob([text], {type:'text/plain'});
+      const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href=url; a.download='Zia_Kahila_Resume.txt'; a.click(); URL.revokeObjectURL(url);
+    }
 
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        const headerHeight = document.querySelector('header').offsetHeight; 
-                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+    // Smooth nav highlight
+    document.querySelectorAll('nav.side a').forEach(a=>{
+      a.addEventListener('click', e=>{
+        document.querySelectorAll('nav.side a').forEach(x=>x.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
 
-            // 4. Efek Klik Portofolio
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            portfolioItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    alert('Anda mengklik proyek: ' + item.querySelector('h3').innerText + '. Link demo/repository sedang disiapkan! Mohon ditunggu.');
-                });
-            });
+    // Accessibility: trap focus in modal when opened
+    modal.addEventListener('keydown', function(e){
+      if(e.key==='Tab'){
+        const focusables = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if(!focusables.length) return;
+        const first = focusables[0]; const last = focusables[focusables.length-1];
+        if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); }
+      }
+    });
 
-        });
-    </script>
+    // Allow adding new project quickly (for testing)
+    function addProject(title,desc,stack,img){
+      const grid = document.getElementById('projectsGrid');
+      const idx = projects.length;
+      projects.push({title,desc,stack,img,live:'#'});
+      const art = document.createElement('article'); art.className='proj'; art.tabIndex=0; art.role='button'; art.onclick=()=>openModal(idx); art.onkeypress=(e)=>{ if(e.key==='Enter') openModal(idx)};
+      art.innerHTML = `<div class='thumb'><img src='${img}' style='width:100%;height:100%;object-fit:cover' alt='${title} screenshot'></div><h3>${title}</h3><div class='tech'>${stack.map(s=>`<span class='tag'>${s}</span>`).join('')}</div>`;
+      grid.appendChild(art);
+    }
 
+    // example of adding a new project (uncomment to test)
+    // addProject('Portfolio V2','Versi kedua portofolio','HTML,CSS,JS',projects[0].img);
+  </script>
 </body>
 </html>
