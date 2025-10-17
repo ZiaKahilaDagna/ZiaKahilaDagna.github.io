@@ -144,14 +144,32 @@
         }
         
         /* PROFIL */
-        #profil .profile-content {
-            max-width: 800px;
+        #profil .profile-wrapper {
+            max-width: 900px; /* Tambahkan sedikit lebar untuk menampung foto */
             margin: 0 auto;
             text-align: left;
             padding: 20px;
             background: var(--bg-color); /* Putih */
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            display: flex; /* Untuk menyusun foto dan konten */
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        #profil .profile-photo {
+            flex-shrink: 0; /* Mencegah foto menyusut */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color); /* Border Merah Marun */
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        #profil .profile-content {
+            flex-grow: 1;
+            text-align: justify;
         }
 
         /* KEAHLIAN (DIAGRAM BATANG CSS) */
@@ -344,6 +362,16 @@
             
             #hero h1 { font-size: 2.5rem; }
             h2 { font-size: 2rem; }
+
+            /* Aturan responsif untuk profil */
+            #profil .profile-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            #profil .profile-content {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -375,10 +403,13 @@
     <section id="profil" class="js-fade-in">
         <div class="container">
             <h2>Tentang Saya</h2>
-            <div class="profile-content">
-                <p>Saya Zia Kahila Dagna, siswa SMK Informatika Utama jurusan Pengembangan Perangkat Lunak dan GIM (PPLG).
-                Saya memiliki minat yang besar di bidang pengembangan web dan terus berusaha mengasah kemampuan saya di dunia pemrograman. Saya merupakan pribadi yang mudah beradaptasi dengan lingkungan baru, mampu bekerja secara tim maupun secara mandiri, serta dapat mengatur waktu dengan baik.
-                Meskipun saya masih belajar untuk lebih percaya diri berbicara di depan umum, saya selalu berusaha untuk berkembang dan menjadikan setiap pengalaman sebagai peluang untuk belajar dan maju.</p>
+            <div class="profile-wrapper">
+                <img src="https://via.placeholder.com/150/800000/F5DEB3?text=Foto+Profil+Zia" alt="Foto Profil Zia Kahila Dagna" class="profile-photo">
+                <div class="profile-content">
+                    <p>Saya Zia Kahila Dagna, siswa SMK Informatika Utama jurusan Pengembangan Perangkat Lunak dan GIM (PPLG).</p>
+                    <p>Saya memiliki minat yang besar di bidang pengembangan web dan terus berusaha mengasah kemampuan saya di dunia pemrograman. Saya merupakan pribadi yang mudah beradaptasi dengan lingkungan baru, mampu bekerja secara tim maupun secara mandiri, serta dapat mengatur waktu dengan baik.</p>
+                    <p>Meskipun saya masih belajar untuk lebih percaya diri berbicara di depan umum, saya selalu berusaha untuk berkembang dan menjadikan setiap pengalaman sebagai peluang untuk belajar dan maju.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -389,8 +420,8 @@
             <div class="skill-chart">
                 
                 <div class="skill-bar-container">
-                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>85%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="85"></div></div>
+                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>75%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="75"></div></div>
                 </div>
 
                 <div class="skill-bar-container">
@@ -399,18 +430,18 @@
                 </div>
 
                 <div class="skill-bar-container">
-                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>75%</span></div>
+                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>75%</span></div>
                     <div class="skill-bar"><div class="skill-level" data-level="75"></div></div>
                 </div>
                 
                 <div class="skill-bar-container">
-                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>90%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="90"></div></div>
-                </div>
-                
-                <div class="skill-bar-container">
-                    <div class="skill-label"><span>Kerja Sama Tim & Adaptasi</span><span>95%</span></div>
-                    <div class="skill-bar"><div class="skill-level" data-level="95"></div></div>
+                    <div class="skill-label"><span>Kerja Sama Tim & Adaptasi</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
                 </div>
 
             </div>
@@ -476,7 +507,7 @@
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <img src="Screenshot 2025-10-14 212118.png">
+                    <img src="Screenshot 2025-10-14 212118.png" alt="Screenshoot Toko Online Statis">
                     <div class="portfolio-info">
                         <h3>Toko Online Statis (Sederhana)</h3>
                         <p>Website statis online shop sederhana.</p>
@@ -485,7 +516,7 @@
                 </div>
 
                 <div class="portfolio-item">
-                    <img src="crudnew.png">
+                    <img src="crudnew.png" alt="Screenshoot CRUD Penjualan Produk">
                     <div class="portfolio-info">
                         <h3>Website CRUD Penjualan Produk</h3>
                         <p>Aplikasi web untuk mengelola data penjualan produk dengan Laravel fermwork.</p>
