@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ====================
-           CSS STYLES (Hanya bagian yang relevan dengan Portofolio yang diubah)
+           CSS STYLES 
            ==================== */
         :root {
             --primary-color: #800000; /* Merah Marun (Dominan) */
@@ -40,130 +40,510 @@
             padding: 0 20px;
         }
 
-        /* HEADER & NAVIGATION (CSS dari sebelumnya) */
+        /* HEADER & NAVIGATION */
         header {
-            background: var(--dark-color);
+            background: var(--dark-color); /* Hitam */
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Shadow lebih kuat */
         }
 
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        nav .logo { font-size: 2rem; font-weight: 700; color: var(--secondary-color); letter-spacing: 1px; }
-        nav ul { list-style: none; display: flex; }
-        nav ul li a { color: white; text-decoration: none; padding: 0.5rem 1rem; display: block; transition: color 0.3s, background-color 0.3s; border-radius: 5px; font-weight: 600; }
-        nav ul li a:hover { color: var(--dark-color); background-color: var(--secondary-color); }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        /* HERO SECTION (CSS dari sebelumnya) */
-        #hero {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #333333 100%);
+        nav .logo {
+            font-size: 2rem; /* Ukuran logo diperbesar */
+            font-weight: 700;
+            color: var(--secondary-color); /* Krem */
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li a {
             color: white;
-            padding: 10rem 0;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: color 0.3s, background-color 0.3s;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        nav ul li a:hover {
+            color: var(--dark-color);
+            background-color: var(--secondary-color); /* Krem sebagai latar belakang hover */
+        }
+
+        /* HERO SECTION */
+        #hero {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #333333 100%); /* Gradien Hitam */
+            color: white;
+            padding: 10rem 0; /* Padding lebih besar */
             text-align: center;
         }
-        #hero h1 { font-size: 4rem; margin-bottom: 0.5rem; color: var(--secondary-color); font-weight: 700; }
-        #hero p { font-size: 1.6rem; margin-bottom: 3rem; color: var(--light-color); font-weight: 300; }
+
+        #hero h1 {
+            font-size: 4rem; /* Ukuran h1 diperbesar */
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color); /* Krem */
+            font-weight: 700;
+        }
+
+        #hero p {
+            font-size: 1.6rem;
+            margin-bottom: 3rem;
+            color: var(--light-color); 
+            font-weight: 300;
+        }
+
         .cta-button {
-            display: inline-block; background: var(--primary-color); color: white; padding: 14px 40px; text-decoration: none;
-            border-radius: 50px; font-weight: 600; box-shadow: 0 6px 15px rgba(128, 0, 0, 0.4);
+            display: inline-block;
+            background: var(--primary-color); /* Merah Marun */
+            color: white;
+            padding: 14px 40px; /* Padding diperbesar */
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 6px 15px rgba(128, 0, 0, 0.4); /* Shadow Merah Marun */
             transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
-        .cta-button:hover { background-color: #a00000; transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 20px rgba(128, 0, 0, 0.6); }
 
-        /* MAIN CONTENT SECTION (CSS dari sebelumnya) */
-        section { padding: 80px 0; text-align: center; position: relative; }
-        section:nth-child(odd) { background-color: var(--bg-color-alt); }
-        h2 { font-size: 2.8rem; margin-bottom: 2.5rem; color: var(--dark-color); font-weight: 700; text-transform: uppercase; }
-        h2::after { content: ''; display: block; width: 70px; height: 4px; background: var(--primary-color); margin: 15px auto 0; }
-        /* ... CSS untuk Profil, Keahlian, Pendidikan, Organisasi (Dianggap Sama) ... */
+        .cta-button:hover {
+            background-color: #a00000;
+            transform: translateY(-3px) scale(1.02); /* Efek lift-up */
+            box-shadow: 0 8px 20px rgba(128, 0, 0, 0.6);
+        }
 
-        /* PORTOFOLIO (Card Grid) - PERUBAHAN UTAMA DI SINI */
+        /* MAIN CONTENT SECTION */
+        section {
+            padding: 80px 0; /* Padding diperbesar */
+            text-align: center;
+            position: relative;
+        }
+
+        section:nth-child(odd) {
+            background-color: var(--bg-color-alt); /* Menggunakan krem lembut */
+        }
+
+        h2 {
+            font-size: 2.8rem; /* Ukuran h2 diperbesar */
+            margin-bottom: 2.5rem;
+            color: var(--dark-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 70px; /* Garis lebih pendek dan tebal */
+            height: 4px; 
+            background: var(--primary-color);
+            margin: 15px auto 0;
+        }
+        
+        /* PROFIL */
+        #profil .profile-wrapper {
+            max-width: 900px; 
+            margin: 0 auto;
+            text-align: left;
+            padding: 30px; /* Padding diperbesar */
+            background: var(--light-color); /* Putih */
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Shadow lebih halus dan nyata */
+            display: flex; 
+            gap: 40px;
+            align-items: center;
+        }
+
+        #profil .profile-photo {
+            flex-shrink: 0; 
+            width: 180px; /* Ukuran foto diperbesar */
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--primary-color); /* Border Merah Marun */
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        #profil .profile-photo:hover {
+            transform: scale(1.05); /* Efek zoom halus */
+        }
+
+        #profil .profile-content {
+            flex-grow: 1;
+            text-align: justify;
+            font-weight: 300;
+        }
+        
+        #profil .profile-content p {
+            margin-bottom: 15px; /* Spasi antar paragraf */
+        }
+
+        /* KEAHLIAN (DIAGRAM BATANG CSS) */
+        #keahlian .skill-chart {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 25px; /* Spasi antar bar */
+        }
+
+        .skill-label {
+            font-weight: 600; /* Lebih tebal */
+            color: var(--dark-color);
+        }
+
+        .skill-bar {
+            background-color: #e0e0e0; 
+            border-radius: 8px; /* Sudut lebih melengkung */
+            height: 30px; /* Tinggi bar diperbesar */
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--primary-color); 
+            width: 0; 
+            transition: width 1.5s ease-out; 
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            color: var(--secondary-color);
+            font-size: 0.9rem; /* Ukuran font di bar skill ditingkatkan */
+            font-weight: 600;
+            border-radius: 8px; /* Sudut melengkung */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+        }
+
+        /* PENDIDIKAN & ORGANISASI (Timeline) */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 20px 0;
+            padding-bottom: 40px;
+        }
+
+        .timeline::before {
+            width: 5px; /* Garis timeline lebih tebal */
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2.5px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item-content {
+            padding: 25px;
+            background: var(--light-color); 
+            border-radius: 8px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            text-align: left;
+            border-left: 6px solid var(--secondary-color); /* Border lebih tebal */
+            transition: transform 0.3s;
+        }
+
+        .timeline-item-content h4 {
+            color: var(--primary-color); 
+            font-weight: 600;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 18px; /* Lingkaran lebih besar */
+            height: 18px;
+            right: -9px;
+            background-color: var(--secondary-color); /* Krem */
+            border: 5px solid var(--primary-color); /* Merah Marun */
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -9px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: right;
+        }
+        
+        .timeline-date {
+            color: var(--primary-color); /* Merah Marun */
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        /* PORTOFOLIO (Card Grid) */
         #portofolio .portfolio-grid {
-            /* Mengatur grid agar card lebih kecil, dengan 3 kolom pada layar besar */
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Min width 280px */
-            gap: 25px; /* Spasi antar card sedikit diperkecil */
-            max-width: 1000px; /* Batasi lebar container portofolio */
-            margin: 30px auto 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
         }
 
         .portfolio-item {
-            background: var(--light-color);
-            border-radius: 12px;
+            background: var(--light-color); /* Putih */
+            border-radius: 12px; /* Sudut lebih melengkung */
             overflow: hidden;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Shadow lebih ringan */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
             text-align: left;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
         }
 
         .portfolio-item:hover {
-            transform: translateY(-5px); /* Efek hover lebih halus */
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: translateY(-8px); /* Efek hover lebih nyata */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
         .portfolio-item img {
             width: 100%;
-            /* Tinggi gambar sedikit diperkecil */
-            height: 180px; 
+            height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--secondary-color); /* Border lebih tipis */
+            border-bottom: 5px solid var(--secondary-color); /* Border lebih tebal */
             transition: opacity 0.3s;
         }
         
+        .portfolio-item:hover img {
+            opacity: 0.9;
+        }
+
         .portfolio-info {
-            padding: 20px; /* Padding card dikurangi */
+            padding: 25px;
         }
 
         .portfolio-info h3 {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Merah Marun */
             margin-bottom: 5px;
             font-weight: 600;
-            font-size: 1.3rem; /* Ukuran judul disesuaikan */
-        }
-        
-        /* Gaya baru untuk deskripsi singkat */
-        .portfolio-info .short-desc {
-            font-size: 0.95rem;
-            color: var(--text-color);
-            margin-bottom: 12px;
-            line-height: 1.4;
         }
 
         .tech-stack {
-            font-size: 0.85rem; /* Ukuran font tech stack diperkecil */
+            font-size: 0.9rem;
             color: var(--text-color);
             font-style: italic;
-            margin-top: 10px;
+            margin-top: 15px;
             display: inline-block;
             font-weight: 400;
-            background: var(--bg-color-alt);
+            background: var(--bg-color-alt); /* Background tag krem lembut */
             padding: 4px 8px;
             border-radius: 4px;
         }
         
-        /* FOOTER (CSS dari sebelumnya) */
+        /* INTERAKTIVITAS & ANIMASI */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* FOOTER */
         footer {
-            background: var(--dark-color);
-            color: var(--secondary-color);
+            background: var(--dark-color); /* Hitam */
+            color: var(--secondary-color); /* Krem */
             padding: 1.5rem 0;
             text-align: center;
             font-size: 0.9rem;
         }
 
-        /* RESPONSIVENESS (CSS dari sebelumnya) */
+        /* RESPONSIVENESS */
         @media (max-width: 900px) {
-            /* ... (Aturan responsif lainnya dari kode sebelumnya) ... */
-            #portofolio .portfolio-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 1 atau 2 kolom pada mobile */
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item::after, .timeline-item:nth-child(even)::after { left: 10px; right: auto; }
+            .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { text-align: left; }
+            
+            #hero h1 { font-size: 3rem; }
+            h2 { font-size: 2.2rem; }
+
+            /* Aturan responsif untuk profil */
+            #profil .profile-wrapper {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 20px;
+            }
+            #profil .profile-content {
+                text-align: center;
+            }
+            #profil .profile-photo {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ZKD.</div>
+                <ul>
+                    <li><a href="#profil">Profil</a></li>
+                    <li><a href="#keahlian">Keahlian</a></li>
+                    <li><a href="#pendidikan">Edukasi</a></li>
+                    <li><a href="#organisasi">Organisasi</a></li>
+                    <li><a href="#portofolio">Karya</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="js-fade-in">
+        <div class="container">
+            <h1>Zia Kahila Dagna</h1>
+            <p>JUNIOR WEB DEVELOPER</p>
+            <a href="#portofolio" class="cta-button">Lihat Portofolio</a>
+        </div>
+    </section>
+    
+    <section id="profil" class="js-fade-in">
+        <div class="container">
+            <h2>Tentang Saya</h2>
+            <div class="profile-wrapper">
+                <img src="https://via.placeholder.com/180/800000/F5DEB3?text=Foto+Profil+Zia" alt="Foto Profil Zia Kahila Dagna" class="profile-photo">
+                <div class="profile-content">
+                    <p>Saya Zia Kahila Dagna, siswa SMK Informatika Utama jurusan Pengembangan Perangkat Lunak dan GIM (PPLG).</p>
+                    <p>Saya memiliki minat yang besar di bidang pengembangan web dan terus berusaha mengasah kemampuan saya di dunia pemrograman. Saya merupakan pribadi yang mudah beradaptasi dengan lingkungan baru, mampu bekerja secara tim maupun secara mandiri, serta dapat mengatur waktu dengan baik.</p>
+                    <p>Meskipun saya masih belajar untuk lebih percaya diri berbicara di depan umum, saya selalu berusaha untuk berkembang dan menjadikan setiap pengalaman sebagai peluang untuk belajar dan maju.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="keahlian" class="js-fade-in">
+        <div class="container">
+            <h2>Keahlian Teknis & Non-Teknis</h2>
+            <div class="skill-chart">
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>HTML & CSS Dasar</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Konsep CRUD & Laravel (Dasar)</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Database Sederhana & VS Code</span><span>60%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="60"></div></div>
+                </div>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Microsoft Office (Word, Excel, PPT)</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+                
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Bekerja Sama Tim Maupun Mandiri</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Cepat Beradaptasi dengan Lingkungan Baru</span><span>70%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="70"></div></div>
+                </div>
+
+                <div class="skill-bar-container">
+                    <div class="skill-label"><span>Manajemen Waktu yang Baik</span><span>65%</span></div>
+                    <div class="skill-bar"><div class="skill-level" data-level="65"></div></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="pendidikan" class="js-fade-in">
+        <div class="container">
+            <h2>Edukasi</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>SMK Informatika Utama</h4>
+                        <p>Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG)</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2021 - 2024</span>
+                        <h4>MTs Darur Roja</h4>
+                        <p>Lulusan Madrasah Tsanawiyah.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="organisasi" class="js-fade-in">
+        <div class="container">
+            <h2>Pengalaman Organisasi</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Anggota Karang Taruna (Katar)</h4>
+                        <p>Lingkungan RT 02/RW 05, Kel. Cinere, Kec. Cinere</p>
+                        <ul>
+                            <li>Berpartisipasi aktif dalam kegiatan sosial dan kepemudaan.</li>
+                            <li>Membantu pelaksanaan Maulid Nabi dan Isra Mi’raj.</li>
+                            <li>Menjadi panitia lomba 17 Agustus.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-item-content">
+                        <span class="timeline-date">2024 - Sekarang</span>
+                        <h4>Anggota English Club (EC)</h4>
+                        <p>SMK Informatika Utama</p>
+                        <ul>
+                            <li>Aktif mengikuti kegiatan TMI, penyampaian materi, dan Ice Breaking.</li>
+                            <li>Mengembangkan kemampuan berbicara dan kosakata melalui kegiatan Vocab Jar.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="portofolio" class="js-fade-in">
         <div class="container">
@@ -171,29 +551,20 @@
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/800000/F5DEB3?text=Toko+Online" alt="Screenshoot Toko Online Statis">
+                    <img src="Screenshot 2025-10-14 212118.png" alt="Screenshoot Toko Online Statis">
                     <div class="portfolio-info">
                         <h3>Toko Online Statis (Sederhana)</h3>
-                        <p class="short-desc">Proyek awal untuk menampilkan katalog produk, dirancang dengan fokus pada tata letak yang bersih dan navigasi yang mudah.</p>
+                        <p>Website statis online shop sederhana.</p>
                         <span class="tech-stack">Tech Stack: HTML, CSS</span>
                     </div>
                 </div>
 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/800000/F5DEB3?text=CRUD+Produk" alt="Screenshoot CRUD Penjualan Produk">
+                    <img src="crudnew.png" alt="Screenshoot CRUD Penjualan Produk">
                     <div class="portfolio-info">
                         <h3>Website CRUD Penjualan Produk</h3>
-                        <p class="short-desc">Aplikasi web dinamis yang berfungsi untuk mengelola data produk (Create, Read, Update, Delete) menggunakan framework PHP.</p>
-                        <span class="tech-stack">Tech Stack: Laravel, PHP, MySQL, Bootstrap</span>
-                    </div>
-                </div>
-                
-                <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/400x180/800000/F5DEB3?text=Sistem+Informasi" alt="Screenshoot Sistem Informasi Sekolah">
-                    <div class="portfolio-info">
-                        <h3>Sistem Informasi Akademik Sederhana</h3>
-                        <p class="short-desc">Proyek simulasi sistem pendaftaran atau nilai siswa. Dirancang untuk memahami konsep validasi data dan manajemen sesi.</p>
-                        <span class="tech-stack">Tech Stack: PHP, HTML, CSS, JavaScript (Dasar)</span>
+                        <p>Aplikasi web untuk mengelola data penjualan produk dengan Laravel fermwork.</p>
+                        <span class="tech-stack">Tech Stack: HTML, CSS, PHP, MySQL, Bootstrap, Template GitHub</span>
                     </div>
                 </div>
                 
@@ -201,5 +572,83 @@
         </div>
     </section>
 
-    </body>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Zia Kahila Dagna | Portofolio.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Interaksi Fade-In on Scroll (Untuk semua section)
+            const faders = document.querySelectorAll('.js-fade-in');
+
+            const appearOptions = {
+                threshold: 0.2, 
+                rootMargin: "0px 0px -50px 0px" 
+            };
+
+            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+                    entry.target.classList.add('is-visible');
+                    // Tambahkan animasi skill bar setelah section terlihat
+                    if (entry.target.id === 'keahlian') {
+                        animateSkillBars();
+                    }
+                    appearOnScroll.unobserve(entry.target);
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            // 2. Animasi Diagram Batang Keahlian
+            function animateSkillBars() {
+                const skillLevels = document.querySelectorAll('.skill-level');
+                skillLevels.forEach(level => {
+                    const skillPercentage = level.getAttribute('data-level') + '%';
+                    level.style.width = skillPercentage;
+                    // Tampilkan persentase di dalam bar setelah animasi dimulai
+                    level.textContent = skillPercentage; 
+                });
+            }
+            
+            // 3. Interaksi Scroll Halus (Smooth Scrolling)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight; 
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // 4. Efek Klik Portofolio
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            portfolioItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    alert('Anda mengklik proyek: ' + item.querySelector('h3').innerText + '. Mohon maaf, link demo belum tersedia.');
+                });
+            });
+
+        });
+    </script>
+
+</body>
 </html>
