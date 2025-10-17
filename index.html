@@ -9,11 +9,12 @@
            CSS STYLES 
            ==================== */
         :root {
-            --primary-color: #e91e63; /* Merah Muda - Kreatif & Dinamis */
-            --secondary-color: #00bcd4; /* Sian - Teknologi */
-            --dark-color: #212121; /* Abu gelap */
-            --light-color: #f5f5f5; /* Abu terang */
-            --bg-color: #ffffff;
+            --primary-color: #800000; /* Merah Marun */
+            --secondary-color: #F5DEB3; /* Krem */
+            --dark-color: #1a1a1a; /* Hitam pekat */
+            --light-color: #ffffff; /* Putih bersih */
+            --bg-color: #ffffff; /* Putih bersih */
+            --text-color: #333333; /* Abu-abu gelap (mendekati hitam) */
             --font-main: 'Arial', sans-serif;
         }
 
@@ -27,7 +28,7 @@
             font-family: var(--font-main);
             line-height: 1.6;
             background-color: var(--bg-color);
-            color: var(--dark-color);
+            color: var(--text-color);
             scroll-behavior: smooth;
         }
 
@@ -39,13 +40,13 @@
 
         /* HEADER & NAVIGATION */
         header {
-            background: var(--dark-color);
+            background: var(--dark-color); /* Hitam */
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
         }
 
         nav {
@@ -57,7 +58,7 @@
         nav .logo {
             font-size: 1.8rem;
             font-weight: bold;
-            color: var(--primary-color);
+            color: var(--secondary-color); /* Krem */
         }
 
         nav ul {
@@ -74,12 +75,12 @@
         }
 
         nav ul li a:hover {
-            color: var(--secondary-color);
+            color: var(--primary-color); /* Merah Marun */
         }
 
         /* HERO SECTION */
         #hero {
-            background: linear-gradient(135deg, var(--dark-color) 0%, #424242 100%);
+            background: linear-gradient(135deg, var(--dark-color) 0%, #333333 100%); /* Gradien Hitam */
             color: white;
             padding: 8rem 0;
             text-align: center;
@@ -88,18 +89,18 @@
         #hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            color: var(--primary-color);
+            color: var(--secondary-color); /* Krem */
         }
 
         #hero p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
-            color: var(--secondary-color);
+            color: var(--light-color); /* Putih */
         }
 
         .cta-button {
             display: inline-block;
-            background: var(--primary-color);
+            background: var(--primary-color); /* Merah Marun */
             color: white;
             padding: 12px 30px;
             text-decoration: none;
@@ -110,7 +111,7 @@
         }
 
         .cta-button:hover {
-            background-color: #d81b60;
+            background-color: #a00000; /* Merah Marun lebih gelap */
             transform: scale(1.05);
         }
 
@@ -122,13 +123,13 @@
         }
 
         section:nth-child(odd) {
-            background-color: var(--light-color);
+            background-color: #f8f8f8; /* Putih keabu-abuan (sedikit kontras) */
         }
 
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            color: var(--dark-color);
+            color: var(--dark-color); /* Hitam */
             position: relative;
             display: inline-block;
         }
@@ -138,7 +139,7 @@
             display: block;
             width: 50%;
             height: 3px;
-            background: var(--secondary-color);
+            background: var(--primary-color); /* Merah Marun */
             margin: 10px auto 0;
         }
         
@@ -148,7 +149,7 @@
             margin: 0 auto;
             text-align: left;
             padding: 20px;
-            background: white;
+            background: var(--bg-color); /* Putih */
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
@@ -166,14 +167,14 @@
 
         .skill-label {
             font-weight: bold;
-            color: var(--dark-color);
+            color: var(--text-color);
             margin-bottom: 5px;
             display: flex;
             justify-content: space-between;
         }
 
         .skill-bar {
-            background-color: var(--light-color);
+            background-color: #e0e0e0; /* Abu-abu terang */
             border-radius: 5px;
             overflow: hidden;
             height: 25px;
@@ -182,13 +183,13 @@
 
         .skill-level {
             height: 100%;
-            background-color: var(--primary-color);
+            background-color: var(--primary-color); /* Merah Marun */
             width: 0; /* Mulai dari nol untuk animasi */
             transition: width 1.5s ease-out; /* Animasi di JS */
             display: flex;
             align-items: center;
             padding-left: 10px;
-            color: white;
+            color: var(--secondary-color); /* Krem untuk teks persentase */
             font-size: 0.8rem;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
         }
@@ -205,7 +206,7 @@
             content: '';
             position: absolute;
             width: 4px;
-            background-color: var(--primary-color);
+            background-color: var(--primary-color); /* Merah Marun */
             top: 0;
             bottom: 0;
             left: 50%;
@@ -224,11 +225,11 @@
 
         .timeline-item-content {
             padding: 20px;
-            background: white;
+            background: var(--bg-color); /* Putih */
             border-radius: 6px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: left;
-            border-left: 5px solid var(--secondary-color);
+            border-left: 5px solid var(--secondary-color); /* Krem */
             transition: transform 0.3s;
         }
 
@@ -243,8 +244,8 @@
             width: 15px;
             height: 15px;
             right: -7.5px;
-            background-color: var(--secondary-color);
-            border: 4px solid var(--primary-color);
+            background-color: var(--secondary-color); /* Krem */
+            border: 4px solid var(--primary-color); /* Merah Marun */
             top: 15px;
             border-radius: 50%;
             z-index: 1;
@@ -259,7 +260,7 @@
         }
         
         .timeline-date {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Merah Marun */
             font-size: 0.9rem;
             display: block;
             margin-bottom: 5px;
@@ -275,7 +276,7 @@
         }
 
         .portfolio-item {
-            background: white;
+            background: var(--bg-color); /* Putih */
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 6px 15px rgba(0,0,0,0.15);
@@ -293,7 +294,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-bottom: 3px solid var(--secondary-color);
+            border-bottom: 3px solid var(--secondary-color); /* Krem */
         }
 
         .portfolio-info {
@@ -301,13 +302,13 @@
         }
 
         .portfolio-info h3 {
-            color: var(--primary-color);
+            color: var(--primary-color); /* Merah Marun */
             margin-bottom: 5px;
         }
 
         .tech-stack {
             font-size: 0.85rem;
-            color: #757575;
+            color: var(--text-color);
             font-style: italic;
             margin-top: 10px;
             display: block;
@@ -323,6 +324,14 @@
         .js-fade-in.is-visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        
+        /* FOOTER */
+        footer {
+            background: var(--dark-color); /* Hitam */
+            color: var(--secondary-color); /* Krem */
+            padding: 1rem 0;
+            text-align: center;
         }
 
         /* RESPONSIVENESS */
@@ -467,7 +476,7 @@
             <div class="portfolio-grid">
                 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/e91e63/ffffff?text=Toko+Online+Statis" alt="Screenshoot Toko Online Statis">
+                    <img src="https://via.placeholder.com/600x400/800000/F5DEB3?text=Toko+Online+Statis" alt="Screenshoot Toko Online Statis">
                     <div class="portfolio-info">
                         <h3>Toko Online Statis (Sederhana)</h3>
                         <p>Website statis online shop sederhana.</p>
@@ -476,7 +485,7 @@
                 </div>
 
                 <div class="portfolio-item">
-                    <img src="https://via.placeholder.com/600x400/00bcd4/212121?text=CRUD+Penjualan" alt="Screenshoot CRUD Penjualan Produk">
+                    <img src="https://via.placeholder.com/600x400/F5DEB3/800000?text=CRUD+Penjualan" alt="Screenshoot CRUD Penjualan Produk">
                     <div class="portfolio-info">
                         <h3>Website CRUD Penjualan Produk</h3>
                         <p>Aplikasi web untuk mengelola data penjualan produk dengan Laravel fermwork.</p>
