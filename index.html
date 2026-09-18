@@ -1,138 +1,1676 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio — Zia Kahila Dagna</title>
-  <meta name="description" content="Portfolio kreatif interaktif — profil, pendidikan, pengalaman organisasi, dan portofolio pembuatan website." />
-  <style>
-    :root{
-      --bg:#0f1724;--card:#0b1220;--muted:#9aa7bf;--accent:#7c3aed;--glass:rgba(255,255,255,0.04);
-      --glass-strong:rgba(255,255,255,0.06);--radius:14px;--maxw:1100px;
-      --mono:'Segoe UI Mono',monospace;--ui:'Inter',system-ui,Segoe UI,Roboto,Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;padding:32px; background:linear-gradient(180deg,#081025 0%, #071123 60%); color:#e6eef8; font-family:var(--ui);
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      scroll-behavior:smooth;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .wrap{max-width:var(--maxw);margin:0 auto;display:flex;flex-direction:column;gap:28px}
-    header.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:20px;border-radius:18px;display:flex;align-items:center;gap:16px;transition:transform .3s ease, box-shadow .3s ease;}
-    header.card:hover{transform:translateY(-4px);box-shadow:0 4px 18px rgba(124,58,237,0.2)}
-    .avatar{width:96px;height:96px;border-radius:14px;flex:0 0 96px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--mono);animation:fadeIn 1s ease;}
-    .hdr h1{margin:0;font-size:22px}
-    .hdr p{margin:6px 0 0;color:var(--muted);font-size:13px}
+    <title>Zia Kahila Dagna | Web Developer</title>
 
-    section.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:18px;border-radius:12px;margin-bottom:18px;opacity:0;transform:translateY(30px);transition:all .6s ease-out;}
-    section.card.visible{opacity:1;transform:translateY(0)}
-    h2{margin:0 0 12px}
-    .bio p{color:var(--muted);line-height:1.5}
+    <meta name="description"
+        content="Portfolio pribadi Zia Kahila Dagna, Web Developer dengan minat pada Web Development dan UI/UX Design.">
 
-    .list{display:grid;gap:12px}
-    .edu-item, .org-item{background:var(--glass-strong);padding:12px;border-radius:10px;transition:transform .2s ease;}
-    .edu-item:hover, .org-item:hover{transform:scale(1.02)}
+    <style>
 
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
-    .proj{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:12px;cursor:pointer;transition:transform .25s ease, box-shadow .25s ease;}
-    .proj:hover{transform:translateY(-8px);box-shadow:0 6px 18px rgba(124,58,237,0.2)}
-    .thumb{height:130px;border-radius:10px;overflow:hidden;background:#081426;display:flex;align-items:center;justify-content:center}
-    .proj h3{margin:10px 0 6px;font-size:15px}
-    .tech{display:flex;flex-wrap:wrap;gap:6px}
-    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--muted)}
+        /* =========================
+           RESET
+        ========================= */
 
-    footer{text-align:center;color:var(--muted);margin-top:6px;font-size:13px}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
-  </style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #faf8f3;
+            color: #30332f;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        /* =========================
+           COLOR
+        ========================= */
+
+        :root {
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --sage: #a8c3a0;
+            --sage-dark: #6f8f68;
+            --peach: #f2c6a0;
+            --lavender: #d8c7e8;
+            --yellow: #f1df9a;
+            --text: #30332f;
+            --muted: #777b74;
+            --border: #e7e3db;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(250, 248, 243, 0.92);
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+
+            padding: 18px 25px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--sage-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #5e625b;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 0 25px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 650px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            width: 100%;
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 70px;
+        }
+
+        .small-title {
+            display: inline-block;
+
+            background: #e7f0e4;
+            color: var(--sage-dark);
+
+            padding: 7px 14px;
+            border-radius: 30px;
+
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--sage-dark);
+        }
+
+        .hero-description {
+            max-width: 580px;
+
+            color: var(--muted);
+            font-size: 17px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--sage-dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            background: #f1eee7;
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
+        .hero-photo {
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            width: 330px;
+            height: 390px;
+
+            background: var(--peach);
+
+            border-radius: 45% 45% 20px 20px;
+
+            padding: 15px;
+
+            transform: rotate(3deg);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 40% 40% 15px 15px;
+
+            background: #eee;
+            transform: rotate(-3deg);
+        }
+
+        .floating-note {
+            position: absolute;
+
+            bottom: 20px;
+            left: 20px;
+
+            background: white;
+
+            padding: 14px 18px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: var(--sage-dark);
+            font-size: 13px;
+            font-weight: 700;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            max-width: 650px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .about-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .about-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .info-box {
+            padding: 18px;
+
+            background: #f5f2eb;
+
+            border-radius: 12px;
+        }
+
+        .info-box small {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 4px;
+        }
+
+        .info-box strong {
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           EXPERIENCE
+        ========================= */
+
+        .timeline {
+            position: relative;
+
+            max-width: 850px;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 35px;
+            padding-bottom: 40px;
+
+            border-left: 2px solid #dfe8dc;
+        }
+
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+        }
+
+        .timeline-item::before {
+            content: "";
+
+            position: absolute;
+
+            left: -7px;
+            top: 0;
+
+            width: 12px;
+            height: 12px;
+
+            background: var(--sage-dark);
+
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            color: var(--sage-dark);
+            font-size: 13px;
+            font-weight: 600;
+
+            margin-bottom: 5px;
+        }
+
+        .timeline-item h3 {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .timeline-company {
+            color: var(--muted);
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .timeline-item ul {
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .timeline-item li {
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-card {
+            background: #edf3ea;
+
+            border-radius: 20px;
+
+            padding: 35px;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .education-card h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+
+        .education-card p {
+            color: #697067;
+        }
+
+        .education-year {
+            font-weight: 700;
+            color: var(--sage-dark);
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 28px;
+
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            margin-bottom: 18px;
+
+            font-size: 20px;
+        }
+
+        .icon-green {
+            background: #e3efe0;
+        }
+
+        .icon-peach {
+            background: #fae7d7;
+        }
+
+        .icon-purple {
+            background: #eee5f5;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .skill-tag {
+            padding: 6px 10px;
+
+            background: #f6f4ef;
+
+            border-radius: 7px;
+
+            font-size: 12px;
+            color: #666a63;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        #projects {
+            background: #f3f0e9;
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            border: 1px solid #e6e1d8;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(80, 75, 60, 0.10);
+        }
+
+        /*
+            GAMBAR PROJECT DIBUAT BESAR
+            supaya screenshot website lebih jelas
+        */
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+
+            background: #eae7df;
+
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.4s;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.03);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-number {
+            color: var(--sage-dark);
+
+            font-size: 12px;
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+
+        .project-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .project-tech span {
+            background: #f4f1eb;
+
+            padding: 6px 9px;
+
+            border-radius: 7px;
+
+            font-size: 11px;
+
+            color: #666a63;
+        }
+
+
+        /* =========================
+           ORGANIZATION
+        ========================= */
+
+        .organization-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 30px;
+        }
+
+        .organization-card h3 {
+            font-size: 21px;
+        }
+
+        .organization-card .position {
+            color: var(--sage-dark);
+
+            font-size: 14px;
+            font-weight: 600;
+
+            margin: 5px 0 15px;
+        }
+
+        .organization-card ul {
+            padding-left: 18px;
+
+            color: var(--muted);
+        }
+
+        .organization-card li {
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            background: var(--sage-dark);
+
+            color: white;
+
+            border-radius: 25px;
+
+            padding: 50px;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            opacity: 0.85;
+            max-width: 550px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            min-width: 260px;
+        }
+
+        .contact-link {
+            background: rgba(255,255,255,0.15);
+
+            padding: 10px 14px;
+
+            border-radius: 8px;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.25);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px 0;
+
+            text-align: center;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+
+                gap: 45px;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-photo {
+                order: -1;
+            }
+
+            .photo-frame {
+                width: 260px;
+                height: 310px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 330px;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .about-info {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-card {
+                flex-direction: column;
+            }
+
+            .project-image {
+                height: 230px;
+            }
+
+            .contact-box {
+                padding: 30px;
+            }
+
+            .contact-links {
+                min-width: 100%;
+            }
+        }
+
+    </style>
 </head>
+
+
 <body>
-  <div class="wrap">
-    <header class="card" role="banner">
-      <div class="avatar">
-  <img src="Screenshot 2025-10-18 104726.png" alt="Foto Zia Kahila Dagna" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
-</div>
 
-      <div class="hdr">
-        <h1>Zia Kahila Dagna | Junior Web Developer</h1>
-        <p>SMK Informatika Utama | Jurusan Pengembangan Perangkat Lunak dan GIM (PPLG)</p>
-      </div>
-    </header>
 
-    <main>
-      <section id="profile" class="card">
-        <h2>Profil</h2>
-        <div class="bio">
-          <p>Saya Zia Kahila Dagna siswa kelas XI SMK Informatika Utama jurusan Pengembangan Perangkat Lunak dan GIM (PPLG). 
-            Terampil dalam pengembangan aplikasi web menggunakan PHP, CSS, HTML, JS, dan MySQL.</p>
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            Zia<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#about">Tentang</a></li>
+            <li><a href="#experience">Pengalaman</a></li>
+            <li><a href="#education">Pendidikan</a></li>
+            <li><a href="#skills">Keterampilan</a></li>
+            <li><a href="#projects">Proyek</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div>
+
+                <span class="small-title">
+                    Web Development & UI/UX Design
+                </span>
+
+                <h1>
+                    Halo, saya <span>Zia.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Lulusan SMK Informatika Utama jurusan Pengembangan
+                    Perangkat Lunak dan Gim (PPLG) dengan minat pada
+                    Web Development dan UI/UX Design.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        Lihat Proyek
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Hubungi Saya
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-photo">
+
+                <div class="photo-frame">
+
+                    <!-- GANTI FOTO DI SINI -->
+
+                    <img
+                        src="foto-zia.jpg"
+                        alt="Foto Zia Kahila Dagna"
+                    >
+
+                </div>
+
+                <div class="floating-note">
+                    📍 Depok, Jawa Barat
+                </div>
+
+            </div>
+
         </div>
-      </section>
 
-      <section id="education" class="card">
-        <h2>Pendidikan</h2>
-        <div class="list">
-          <div class="edu-item">
-            <strong>SMK Informatika Utama</strong>
-            <div class="meta">2024 — sekarang · Jurusan: PPLG</div>
-          </div>
-          <div class="edu-item">
-            <strong>MTs Darur Roja</strong>
-            <div class="meta">2021 — 2024</div>
-          </div>
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Tentang Saya
+            </div>
+
+            <h2>Profil</h2>
+
+            <p>
+                Sedikit tentang latar belakang dan ketertarikan saya
+                di bidang teknologi.
+            </p>
+
         </div>
-      </section>
 
-      <section id="org" class="card">
-        <h2>Pengalaman Organisasi</h2>
-        <div class="list">
-          <div class="org-item">
-            <strong>Karang Taruna — Anggota</strong>
-            <div class="meta">2024 — sekarang</div>
-            <p class="meta">Berpartisipasi dalam kegiatan sosial dan organisasi kepemudaan di lingkungan sekitar.</p>
-          </div>
-          <div class="org-item">
-            <strong>English Club — Anggota</strong>
-            <div class="meta">2024 — sekarang</div>
-            <p class="meta">Meningkatkan kemampuan komunikasi dan presentasi dalam bahasa Inggris.</p>
-          </div>
+
+        <div class="about-grid">
+
+            <div class="about-card">
+
+                <p>
+                    Lulusan SMK Informatika Utama jurusan Pengembangan
+                    Perangkat Lunak dan Gim (PPLG) dengan minat di bidang
+                    Web Development dan UI/UX Design.
+                </p>
+
+                <p>
+                    Memiliki pengalaman membangun proyek website menggunakan
+                    PHP, HTML, CSS, JavaScript, dan MySQL serta memahami
+                    konsep CRUD dan pengelolaan database.
+                </p>
+
+                <p>
+                    Terampil membuat wireframe dan merancang antarmuka
+                    menggunakan Figma dan Balsamiq, serta memiliki kemampuan
+                    desain grafis menggunakan CorelDRAW, Photoshop, dan Canva.
+                </p>
+
+                <p>
+                    Adaptif, cepat belajar, mampu bekerja secara individu
+                    maupun tim, serta memiliki motivasi untuk terus berkembang
+                    di bidang teknologi informasi.
+                </p>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <div class="about-info">
+
+                    <div class="info-box">
+                        <small>Nama</small>
+                        <strong>Zia Kahila Dagna</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Bidang</small>
+                        <strong>Web Development</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Lokasi</small>
+                        <strong>Depok, Jawa Barat</strong>
+                    </div>
+
+                    <div class="info-box">
+                        <small>Bahasa</small>
+                        <strong>Indonesia & Inggris Dasar</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
-      </section>
 
-      <section id="projects" class="card">
-        <h2>Portofolio | Proyek Unggulan</h2>
-        <div class="grid">
-          <article class="proj" onclick="alert('MyShop Dashboard — Dashboard admin untuk toko online sederhana.')">
-            <div class="thumb"><img alt="MyShop Dashboard" src="Screenshot 2025-10-14 212118.png" style="width:100%;height:100%;object-fit:cover"></div>
-            <h3>Web Statis Online Shop</h3>
-            <div class="tech"><span class="tag">HTML</span><span class="tag">CSS</span></div>
-          </article>
+    </div>
 
-          <article class="proj" onclick="alert('EduClass Landing — Landing page interaktif untuk layanan kelas online.')">
-            <div class="thumb"><img alt="EduClass Landing" src="crudnew.png" style="width:100%;height:100%;object-fit:cover"></div>
-            <h3>web CRUD Penjualan Produk (Laravel Framework)</h3>
-            <div class="tech"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Template GitHub</span><span class="tag">Boostrap</span></div>
-          </article>
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Pengalaman
+            </div>
+
+            <h2>Pengalaman Kerja</h2>
+
+            <p>
+                Pengalaman yang saya dapatkan selama belajar dan
+                menjalani kegiatan di dunia kerja.
+            </p>
+
         </div>
-      </section>
 
-      <section id="contact" class="card">
-        <h2>Kontak</h2>
-        <p class="meta">Email: ziakahiladagnazia@gmail.com · GitHub: github.com/ZiaKahilaDagna</p>
-      </section>
-    </main>
 
-    <footer>© <span id="year"></span> Zia Kahila Dagna | Portofolio</footer>
-  </div>
+        <div class="timeline">
 
-  <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    const cards=document.querySelectorAll('section.card');
-    const observer=new IntersectionObserver(entries=>{
-      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-    },{threshold:0.15});
-    cards.forEach(c=>observer.observe(c));
-  </script>
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    Januari — Maret 2026
+                </div>
+
+                <h3>Web Developer (Magang)</h3>
+
+                <div class="timeline-company">
+                    PT Nero Training Center
+                </div>
+
+                <ul>
+
+                    <li>
+                        Membantu pengembangan website berbasis Moodle
+                        untuk kebutuhan Learning Management System (LMS).
+                    </li>
+
+                    <li>
+                        Membuat dan mengembangkan website manajemen data
+                        penerima sertifikasi BNSP berbasis website.
+                    </li>
+
+                    <li>
+                        Mengembangkan fitur pengelolaan data menggunakan
+                        konsep CRUD (Create, Read, Update, Delete).
+                    </li>
+
+                    <li>
+                        Mengelola dan mengolah data pada database aplikasi
+                        sesuai kebutuhan sistem.
+                    </li>
+
+                    <li>
+                        Membantu merancang dan menyesuaikan antarmuka
+                        website agar sesuai dengan kebutuhan pengguna.
+                    </li>
+
+                    <li>
+                        Menggunakan PHP, HTML, CSS, JavaScript, MySQL,
+                        dan Laravel dalam proses pengembangan website.
+                    </li>
+
+                    <li>
+                        Bekerja sama dengan tim dalam menyelesaikan tugas
+                        dan pengembangan fitur website.
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-date">
+                    2024 — Sekarang
+                </div>
+
+                <h3>Anggota Karang Taruna</h3>
+
+                <div class="timeline-company">
+                    Karang Taruna RT 02 RW 05
+                </div>
+
+                <ul>
+
+                    <li>
+                        Aktif mengikuti dan berpartisipasi dalam berbagai
+                        kegiatan sosial dan kemasyarakatan.
+                    </li>
+
+                    <li>
+                        Bekerja sama dengan anggota lain dalam mempersiapkan
+                        dan melaksanakan kegiatan organisasi.
+                    </li>
+
+                    <li>
+                        Berpartisipasi dalam kegiatan kepanitiaan dan
+                        membantu pelaksanaan kegiatan di lingkungan masyarakat.
+                    </li>
+
+                    <li>
+                        Menjadi bagian dari Divisi Peralatan dengan tanggung
+                        jawab membantu menyiapkan dan mengelola perlengkapan
+                        kegiatan.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Pendidikan
+            </div>
+
+            <h2>Riwayat Pendidikan</h2>
+
+        </div>
+
+
+        <div class="education-card">
+
+            <div>
+
+                <h3>SMK Informatika Utama</h3>
+
+                <p>
+                    Rekayasa Perangkat Lunak dan Gim (PPLG)
+                </p>
+
+                <p>
+                    Pemrograman Web · Pengembangan Perangkat Lunak dan Gim
+                    · Dasar Coding Kecerdasan Artifisial (AI)
+                    · Proyek website dan aplikasi berbasis database
+                </p>
+
+            </div>
+
+            <div class="education-year">
+                2024 — 2027
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Keterampilan
+            </div>
+
+            <h2>Yang Saya Gunakan</h2>
+
+            <p>
+                Beberapa teknologi dan tools yang saya gunakan
+                dalam mengerjakan proyek.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <!-- WEB -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon icon-green">
+                    💻
+                </div>
+
+                <h3>Web Development</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">Laravel</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Bootstrap</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- UI UX -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon icon-peach">
+                    🎨
+                </div>
+
+                <h3>UI/UX & Design</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Balsamiq</span>
+                    <span class="skill-tag">Canva</span>
+                    <span class="skill-tag">Photoshop</span>
+                    <span class="skill-tag">CorelDRAW</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="skill-card">
+
+                <div class="skill-icon icon-purple">
+                    🛠️
+                </div>
+
+                <h3>Tools & Soft Skills</h3>
+
+                <div class="skill-list">
+
+                    <span class="skill-tag">GitHub</span>
+                    <span class="skill-tag">VS Code</span>
+                    <span class="skill-tag">Problem Solving</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Komunikasi</span>
+                    <span class="skill-tag">Disiplin</span>
+                    <span class="skill-tag">Manajemen Waktu</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Portfolio
+            </div>
+
+            <h2>Proyek yang Pernah Dikerjakan</h2>
+
+            <p>
+                Beberapa proyek website dan aplikasi yang saya
+                kerjakan selama belajar maupun praktik.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- PROJECT 1 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project1.png"
+                        alt="Web Statis Online Shop"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 01
+                    </div>
+
+                    <h3>Web Statis Online Shop</h3>
+
+                    <p>
+                        Website toko online sederhana dengan tampilan
+                        katalog produk dan halaman informasi.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project2.png"
+                        alt="Website CRUD Penjualan Produk"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 02
+                    </div>
+
+                    <h3>CRUD Penjualan Produk</h3>
+
+                    <p>
+                        Website pengelolaan data penjualan produk
+                        dengan fitur CRUD dan database.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project3.png"
+                        alt="Website Manajemen Sertifikasi BNSP"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 03
+                    </div>
+
+                    <h3>Manajemen Penerima Sertifikasi BNSP</h3>
+
+                    <p>
+                        Website untuk membantu pengelolaan data penerima
+                        sertifikasi BNSP selama kegiatan magang.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 4 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project4.png"
+                        alt="AERA Bridge"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 04
+                    </div>
+
+                    <h3>AERA Bridge</h3>
+
+                    <p>
+                        Konsep aplikasi pelaporan masalah perkotaan
+                        dengan pengolahan prioritas berbasis teknologi AI.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Laravel</span>
+                        <span>MySQL</span>
+                        <span>JavaScript</span>
+                        <span>AI</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 5 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project5.png"
+                        alt="Aplikasi Kasir"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 05
+                    </div>
+
+                    <h3>Aplikasi Kasir Sederhana</h3>
+
+                    <p>
+                        Aplikasi desktop sederhana untuk membantu
+                        proses pencatatan dan transaksi penjualan.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Java</span>
+                        <span>NetBeans</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 6 -->
+
+            <article class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="project6.png"
+                        alt="UI UX Design"
+                    >
+
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-number">
+                        PROJECT 06
+                    </div>
+
+                    <h3>UI/UX Website</h3>
+
+                    <p>
+                        Perancangan wireframe dan antarmuka website
+                        menggunakan tools desain dan prototyping.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Figma</span>
+                        <span>Balsamiq</span>
+                        <span>UI/UX</span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div>
+
+                <h2>Mari terhubung.</h2>
+
+                <p>
+                    Jika ingin berdiskusi mengenai website, UI/UX,
+                    proyek, atau peluang kerja sama, silakan hubungi
+                    saya melalui kontak berikut.
+                </p>
+
+            </div>
+
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-link"
+                    href="mailto:ziakahiladagnazia@gmail.com"
+                >
+                    ✉️ ziakahiladagnazia@gmail.com
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/ZiaKahilaDagna"
+                    target="_blank"
+                >
+                    💻 GitHub
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="https://www.linkedin.com/in/zia-kahila-dagna-8763b138b"
+                    target="_blank"
+                >
+                    🔗 LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
+        © <span id="year"></span> Zia Kahila Dagna.
+        Dibuat dengan HTML & CSS.
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+
 </body>
 </html>
